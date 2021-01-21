@@ -1,0 +1,13 @@
+.PrimaryButtonL {
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 5px 15px 8px;
+    text-transform: capitalize;
+    user-select: none;
+    transition: .3s;
+}
+
+.PrimaryButtonL:hover {
+    background-color: #d4d4d4
+}
