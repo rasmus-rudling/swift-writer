@@ -2,7 +2,8 @@ import React from 'react';
 import classes from './mainMenu.module.scss';
 import SWLogo from '../../Resources/Icons/SWLogo.svg';
 
-import LogInButton from '../Common/Buttons/PrimaryButtonL/primaryButtonL';
+import LogInButton from '../Common/Buttons/PrimaryButton/primaryButton';
+import LanguageButton from '../Common/Buttons/SecondaryButton/secondaryButton';
 
 const MainMenu = () => {
     const logInHandler = () => {
@@ -13,11 +14,14 @@ const MainMenu = () => {
         <div className={classes.MainMenu}>
             <img src={SWLogo} />
 
-            <LogInButton
-                colorTheme = 'light'
-                text = 'Log in'
-                onClickHandler = {logInHandler}
-            />
+            <div className={classes.rightSideContent}>
+                <LogInButton
+                    colorTheme = 'green'
+                    text = 'Log in'
+                    onClickHandler = {logInHandler}
+                />
+            </div>
+            
         </div>
     )
 }

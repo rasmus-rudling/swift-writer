@@ -1,0 +1,23 @@
+.Key {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #60D97D;
+    border-radius: 10px;
+    border: 2px solid #439957;
+    user-select: none;
+    cursor: pointer;
+    transition: .3s;
+    color: #fff;
+}
+
+.Key:not(:first-child) {
+    margin-left: 10px;
+}
+
+.Key:hover {
+    transform: scale(1.05);
+    background-color: #439957;
+}

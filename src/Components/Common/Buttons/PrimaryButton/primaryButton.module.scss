@@ -1,0 +1,53 @@
+.orangeButton,  
+.redButton,
+.blueButton,
+.blackButton,
+.greenButton,
+.purpleButton {
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 15px 7px;
+    text-transform: capitalize;
+    user-select: none;
+    transition: .2s;
+    color: #fff;
+}
+
+.orangeButton {
+    background-color: #FEC46E;
+    border: 2px solid #BF9452;
+}
+
+.redButton {
+    background-color: #FE6E6E;
+    border: 2px solid #BF5252;
+}
+
+.blueButton {
+    background-color: #5289BF;
+    border: 2px solid #5289BF;
+}
+
+.blackButton {
+    background-color: #232323;
+    border: 2px solid #000;
+}
+
+.greenButton {
+    background-color: #60D97D; 
+    border: 2px solid #439957;
+}
+
+.purpleButton {
+    background-color: #CA6EFE;
+    border: 2px solid #9752BF;
+}
+
+
+
+.orangeButton:hover {background-color: #BF9452;}
+.redButton:hover {background-color: #BF5252;}
+.blueButton:hover {background-color: #5289BF}
+.blackButton:hover {background-color: #777777;}
+.greenButton:hover {background-color: #439957}
+.purpleButton:hover {background-color:#9752BF}

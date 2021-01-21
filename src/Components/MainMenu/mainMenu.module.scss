@@ -2,12 +2,28 @@
     height: 80px;
     width: 100%;
     display: flex;
+    // background-color: #fff;
     background-color: #FEC46E;
     align-items: center;
     justify-content: space-between;
     padding: 0 25px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
 }
 
 .MainMenu img {
     height: 60%;
+    cursor: pointer;
+}
+
+.rightSideContent {
+    display: flex;
+    justify-content: space-around;
+}
+
+// .rightSideContent div:first-child {
+//     margin-right: 20px;
+// }
+
+.rightSideContent div {
+    margin-right: 20px;
 }

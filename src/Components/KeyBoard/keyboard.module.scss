@@ -1,0 +1,22 @@
+.Keyboard {
+    margin: 30px;
+    background-color: #FEC46E;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid #BF9452;
+    margin: 50px auto;
+}
+
+.row1 {
+    display: flex;
+}
+
+.row2,
+.row3,
+.row4 {
+    margin-top: 10px;
+    display: flex;
+}
