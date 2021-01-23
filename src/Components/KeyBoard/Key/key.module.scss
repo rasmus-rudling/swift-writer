@@ -3,14 +3,13 @@
     height: 50px;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    background-color: #60D97D;
+    padding: 9px 10px 11px;
     border-radius: 10px;
-    border: 2px solid #439957;
     user-select: none;
     cursor: pointer;
     transition: .3s;
     color: #fff;
+    position: relative;
 }
 
 .Key:not(:first-child) {
@@ -19,5 +18,68 @@
 
 .Key:hover {
     transform: scale(1.05);
+}
+
+
+.redKey {
+    background-color: #FE6E6E;
+    border: 2px solid #BF5252;
+}
+.redKey:hover {
+    background-color: #BF5252;
+}
+
+.blueKey {
+    background-color: #6EB6FE;
+    border: 2px solid #5289BF;
+}
+.blueKey:hover {
+    background-color: #5289BF;
+}
+
+.greenKey {
+    background-color: #60D97D;
+    border: 2px solid #439957;
+}
+.greenKey:hover {
     background-color: #439957;
 }
+
+.orangeKey {
+    background-color: #FEC46E;
+    border: 2px solid #BF9452;
+}
+.orangeKey:hover {
+    background-color: #BF9452;
+}
+
+.purpleKey {
+    background-color: #CA6EFE;
+    border: 2px solid #9752BF;
+}
+.purpleKey:hover {
+    background-color: #9752BF;
+}
+
+.grayKey {
+    background-color: #BFBFBF;
+    border: 2px solid #777777;
+}
+.grayKey:hover {
+    background-color: #777777;
+}
+
+.marker {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-left: -8px;
+    height: 3px;
+    width: 16px;
+    border-radius: 2px;
+}
+
+.hide {
+    display: none;
+}
+

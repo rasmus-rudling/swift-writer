@@ -2,8 +2,8 @@ import React from 'react';
 import classes from './mainMenu.module.scss';
 import SWLogo from '../../Resources/Icons/SWLogo.svg';
 
-import LogInButton from '../Common/Buttons/PrimaryButton/primaryButton';
-import LanguageButton from '../Common/Buttons/SecondaryButton/secondaryButton';
+import LogInButton from '../Common/Buttons/PrimaryButton/PrimaryButton';
+import LanguageButton from '../Common/Buttons/SecondaryButton/SecondaryButton';
 
 const MainMenu = () => {
     const logInHandler = () => {

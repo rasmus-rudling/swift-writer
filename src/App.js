@@ -1,16 +1,24 @@
 import './App.css';
-import Keyboard from './Components/KeyBoard/keyboard';
-import MainMenu from './Components/MainMenu/mainMenu';
-import Hands from './Components/Hands/hands';
+import classes from './app.module.scss';
+
+
+import MainMenu from './Components/MainMenu/MainMenu';
+import LeftHand from './Components/LeftHand/LeftHand';
+import RightHand from './Components/RightHand/RightHand';
+import SweWinKeyboard from './Components/Keyboards/Swedish/Windows/SweWinKeyboard';
+import Practice from './Components/Practice/Practice';
 
 function App() {
   return (
     <div className="App">
         <MainMenu />
 
-        <Keyboard />
-
-        <Hands />
+        <Practice />
+        <div className={classes.keyboard}>
+            <LeftHand />
+            <SweWinKeyboard />
+            <RightHand />
+        </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './rightHand.module.scss';
 
-import rightHandImg from '../../../Resources/Images/rightHand.png';
+import rightHandImg from '../../Resources/Images/rightHand.png';
 
 const RightHand = () => {
     return (

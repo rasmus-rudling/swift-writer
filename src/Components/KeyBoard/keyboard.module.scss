@@ -1,22 +1,17 @@
 .Keyboard {
-    margin: 30px;
-    background-color: #FEC46E;
+    background-color: #BFBFBF;
     display: flex;
     flex-direction: column;
     width: fit-content;
     padding: 20px;
     border-radius: 15px;
-    border: 3px solid #BF9452;
-    margin: 50px auto;
+    border: 3px solid #777777;
 }
 
-.row1 {
+.row {
     display: flex;
 }
 
-.row2,
-.row3,
-.row4 {
+.row:not(:first-child) {
     margin-top: 10px;
-    display: flex;
 }
