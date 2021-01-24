@@ -1,0 +1,29 @@
+.FrontPage {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: rgb(254, 196, 110, 0.25);
+}
+
+.mappingText {
+    background-color: transparent;
+    margin-bottom: 6px;
+    color: #232323;
+    font-weight: 400;
+}
+
+.settings {
+    display: flex;
+    margin: 0 auto;
+}
+
+.setting {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting:not(:last-child) {
+    margin-right: 25px;
+}

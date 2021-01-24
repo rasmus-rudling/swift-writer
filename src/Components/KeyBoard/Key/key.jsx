@@ -8,8 +8,10 @@ const Key = ({
     width, 
     finger, 
     keyLeave,
-    keyEnter, 
-    active=true
+    keyEnter,
+    updateTime,
+    allKeysActive,
+    active=false
 }) => {
     let keyWidth, 
         BGColor, 
@@ -35,31 +37,91 @@ const Key = ({
     activeKeyColor = fingerColorMap[finger];
     keyClasses = [classes.Key];
 
-
     if (activeKeyColor === "red") {
-        keyClasses.push(classes.redKey);
-        borderColor = "#BF5252";
+        if (allKeysActive && active) {
+            keyClasses.push(classes.redActive);
+            borderColor = "#BF5252";
+        } else if (allKeysActive) {
+            keyClasses.push(classes.redKey);
+            borderColor = "#BF5252";
+        } else if (!active) {
+            keyClasses.push(classes.inActiveKey, classes.redHover);
+            borderColor = "#777777";
+        } else {
+            keyClasses.push(classes.redKey);
+            borderColor = "#BF5252";
+        }
     } else if (activeKeyColor === "blue") {
-        keyClasses.push(classes.blueKey);
-        borderColor = "#5289BF";
+        if (allKeysActive && active) {
+            keyClasses.push(classes.blueActive);
+            borderColor = "#5289BF";
+        } else if (allKeysActive) {
+            keyClasses.push(classes.blueKey);
+            borderColor = "#5289BF";
+        } else if (!active) {
+            keyClasses.push(classes.inActiveKey, classes.blueHover);
+            borderColor = "#777777";
+        } else {
+            keyClasses.push(classes.blueKey);
+            borderColor = "#5289BF";
+        }
     }  else if (activeKeyColor === "green") {
-        keyClasses.push(classes.greenKey);
-        borderColor = "#439957";
+        if (allKeysActive && active) {
+            keyClasses.push(classes.greenActive);
+            borderColor = "#439957";
+        } else if (allKeysActive) {
+            keyClasses.push(classes.greenKey);
+            borderColor = "#439957";
+        } else if (!active) {
+            keyClasses.push(classes.inActiveKey, classes.greenHover);
+            borderColor = "#777777";
+        } else {
+            keyClasses.push(classes.greenKey);
+            borderColor = "#439957";
+        }
     }  else if (activeKeyColor === "orange") {
-        keyClasses.push(classes.orangeKey);
-        borderColor = "#BF9452";
+        if (allKeysActive && active) {
+            keyClasses.push(classes.orangeActive);
+            borderColor = "#BF9452";
+        } else if (allKeysActive) {
+            keyClasses.push(classes.orangeKey);
+            borderColor = "#BF9452";
+        } else if (!active) {
+            keyClasses.push(classes.inActiveKey, classes.orangeHover);
+            borderColor = "#777777";
+        } else {
+            keyClasses.push(classes.orangeKey);
+            borderColor = "#BF9452";
+        }
     }  else if (activeKeyColor === "purple") {
-        keyClasses.push(classes.purpleKey);
-        borderColor = "#9752BF";
+        if (allKeysActive && active) {
+            keyClasses.push(classes.purpleActive);
+            borderColor = "#9752BF";
+        } else if (allKeysActive) {
+            keyClasses.push(classes.purpleKey);
+            borderColor = "#9752BF";
+        } else if (!active) {
+            keyClasses.push(classes.inActiveKey, classes.purpleHover);
+            borderColor = "#777777";
+        } else {
+            keyClasses.push(classes.purpleKey);
+            borderColor = "#9752BF";
+        }
     } else {
-        keyClasses.push(classes.grayKey);
-        borderColor = "#777777";
+        if (allKeysActive && active) {
+            keyClasses.push(classes.grayActive);
+            borderColor = "#777777";
+        } else if (allKeysActive) {
+            keyClasses.push(classes.grayKey);
+            borderColor = "#777777";
+        } else if (!active) {
+            keyClasses.push(classes.inActiveKey, classes.grayHover);
+            borderColor = "#777777";
+        } else {
+            keyClasses.push(classes.grayKey);
+            borderColor = "#777777";
+        }
     }
-    
-    if (!active) {
-        keyClasses = [classes.Key, classes.grayKey];
-        borderColor = "#777777";
-    }  
 
     if (width === undefined) {
         keyWidth = "50px";
@@ -79,11 +141,20 @@ const Key = ({
         keyMarkerClass = classes.hide;
     }
 
+    let transitionTime;
+
+    if (updateTime > 150) {
+        transitionTime = Math.sqrt(updateTime) / 100;
+    } else {
+        transitionTime = "none";
+    }
+
     return (
         <div 
             className={keyClasses.join(" ")}
             style={{
                 "width": keyWidth,
+                "transition": transitionTime
             }}
             onMouseEnter={() => keyEnter(finger)}
             onMouseLeave={() => keyLeave()}

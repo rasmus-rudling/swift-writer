@@ -2,7 +2,24 @@ import React from 'react';
 import classes from './keyboard.module.scss';
 import Key from './Key/Key';
 
-const Keyboard = ({keys, keyEnter, keyLeave, clearIndicators}) => {
+const Keyboard = ({
+    keys, 
+    keyEnter, 
+    keyLeave, 
+    clearIndicators, 
+    activeKey,
+    updateTime,
+    allKeysActive
+}) => {
+
+    const keyIsActive = (_key) => {
+        if (_key.char === 'Space') {
+            return activeKey === " ";
+        } else {
+            return activeKey === _key.char;
+        }
+    } 
+
     return (
         <div 
             className={classes.Keyboard}
@@ -21,6 +38,9 @@ const Keyboard = ({keys, keyEnter, keyLeave, clearIndicators}) => {
                                     finger = {key.finger}
                                     keyLeave = {keyLeave}
                                     keyEnter = {keyEnter}
+                                    active = {keyIsActive(key)}
+                                    updateTime = {updateTime}
+                                    allKeysActive = {allKeysActive}
                                 />
                             ))
                         }

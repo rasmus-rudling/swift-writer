@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './fingerIndicator.module.scss';
 
-const FingerIndicator = ({color, top, left, show}) => {
+const FingerIndicator = ({color, top, left, show, updateTime}) => {
     let backgroundColor,
         borderColor,
         fingerIndicatorClasses;
@@ -32,6 +32,14 @@ const FingerIndicator = ({color, top, left, show}) => {
         fingerIndicatorClasses = [classes.FingerIndicator, classes.hideIndicator]
     }
 
+    let transitionTime;
+
+    if (updateTime > 150) {
+        transitionTime = Math.sqrt(updateTime) / 100;
+    } else {
+        transitionTime = "none";
+    }
+
     return (
         <div 
             className={fingerIndicatorClasses.join(" ")}
@@ -39,7 +47,8 @@ const FingerIndicator = ({color, top, left, show}) => {
                 "backgroundColor": backgroundColor,
                 "borderColor": borderColor,
                 "top": top,
-                "left": left
+                "left": left,
+                "transition": `${transitionTime}s`
             }}
         >
             

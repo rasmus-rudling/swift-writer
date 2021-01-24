@@ -4,7 +4,7 @@ import rightHandImg from '../../../Resources/Images/rightHand.png';
 
 import FingerIndicator from '../FingerIndicator/FingerIndicator';
 
-const RightHand = ({highlightedFingers}) => {
+const RightHand = ({highlightedFingers, updateTime}) => {
     return (
         <div className={classes.RightHand}>
             <FingerIndicator 
@@ -12,6 +12,7 @@ const RightHand = ({highlightedFingers}) => {
                 top = "98px"
                 left = "41px"
                 show = {highlightedFingers["thumbR"]}
+                updateTime = {updateTime}
             />
 
             <FingerIndicator 
@@ -19,6 +20,7 @@ const RightHand = ({highlightedFingers}) => {
                 top = "-2px"
                 left = "101px"
                 show = {highlightedFingers["indexR"]}
+                updateTime = {updateTime}
             />
 
             <FingerIndicator 
@@ -26,6 +28,7 @@ const RightHand = ({highlightedFingers}) => {
                 top = "-10px"
                 left = "145px"
                 show = {highlightedFingers["middleR"]}
+                updateTime = {updateTime}
             />
 
             <FingerIndicator 
@@ -33,6 +36,7 @@ const RightHand = ({highlightedFingers}) => {
                 top = "-1px"
                 left = "189px"
                 show = {highlightedFingers["ringR"]}
+                updateTime = {updateTime}
             />
 
             <FingerIndicator 
@@ -40,6 +44,7 @@ const RightHand = ({highlightedFingers}) => {
                 top = "50px"
                 left = "228px"
                 show = {highlightedFingers["pinkyR"]}
+                updateTime = {updateTime}
             />
 
             <img src={rightHandImg} />

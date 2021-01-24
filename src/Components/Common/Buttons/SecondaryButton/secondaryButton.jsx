@@ -17,6 +17,10 @@ const SecondaryButton = ({colorTheme, text, onClickHandler}) => {
         buttonClass = classes.greenButton;
     } else if (colorTheme === 'purple') {
         buttonClass = classes.purpleButton;
+    } else if (colorTheme === 'gray') {
+        buttonClass = classes.grayButton;
+    } else if (colorTheme === 'white') {
+        buttonClass = classes.whiteButton;
     }
 
     return (

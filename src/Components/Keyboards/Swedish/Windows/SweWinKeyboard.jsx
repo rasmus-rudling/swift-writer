@@ -3,7 +3,14 @@ import classes from './sweWinKeyboard.module.scss';
 
 import Keyboard from '../../../KeyBoard/Keyboard';
 
-const SweWinKeyboard = ({keyEnter, keyLeave, clearIndicators}) => {
+const SweWinKeyboard = ({
+    keyEnter, 
+    keyLeave, 
+    clearIndicators, 
+    activeKey,
+    updateTime,
+    allKeysActive
+}) => {
     const defaultWidth = '50px';
     let sweWinKeys = [
         [
@@ -54,7 +61,7 @@ const SweWinKeyboard = ({keyEnter, keyLeave, clearIndicators}) => {
             {"char":"↲ Enter", "shiftChar":'', "altGrChar":'', "width":"75px", "finger":"pinkyR"}
         ],
         [
-            {"char":"⇧ Shift", "shiftChar":'', "altGrChar":'', "width":"70px", "finger":"pinkyL"},
+            {"char":"⇧ Shift", "shiftChar":'', "altGrChar":'', "width":"75px", "finger":"pinkyL"},
             {"char":"<", "shiftChar":'>', "altGrChar":'|', "width":defaultWidth, "finger":"pinkyL"},
             {"char":"z", "shiftChar":'Z', "altGrChar":'', "width":defaultWidth, "finger":"pinkyL"},
             {"char":"x", "shiftChar":'X', "altGrChar":'', "width":defaultWidth, "finger":"ringL"},
@@ -84,6 +91,9 @@ const SweWinKeyboard = ({keyEnter, keyLeave, clearIndicators}) => {
             keyEnter = {keyEnter}
             keyLeave = {keyLeave}
             clearIndicators = {clearIndicators}
+            activeKey = {activeKey}
+            updateTime = {updateTime}
+            allKeysActive = {allKeysActive}
         />
     )
 }

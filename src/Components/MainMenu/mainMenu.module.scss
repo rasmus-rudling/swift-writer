@@ -2,12 +2,11 @@
     height: 80px;
     width: 100%;
     display: flex;
-    // background-color: #fff;
-    background-color: #FEC46E;
+    background-color: #FE6E6E;
     align-items: center;
     justify-content: space-between;
     padding: 0 25px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 
 .MainMenu img {
@@ -20,10 +19,14 @@
     justify-content: space-around;
 }
 
-// .rightSideContent div:first-child {
-//     margin-right: 20px;
-// }
-
-.rightSideContent div {
+.rightSideContent div:not(:last-child) {
     margin-right: 20px;
+}
+
+.logo {
+    font-family: 'Pacifico', 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 36px;
+    cursor: pointer;
+    user-select: none;
 }

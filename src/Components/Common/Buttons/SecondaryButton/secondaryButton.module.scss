@@ -3,15 +3,20 @@
 .blueButton,
 .blackButton,
 .greenButton,
+.grayButton,
+.whiteButton,
 .purpleButton {
     border-radius: 3px;
     cursor: pointer;
-    padding: 5px 15px 8px;
+    padding: 5px 15px;
     text-transform: capitalize;
     user-select: none;
     transition: .2s;
     border-width: px;
     border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .orangeButton {
@@ -44,6 +49,16 @@
     color: #CA6EFE;
 }
 
+.grayButton {
+    border-color: #777777;
+    color: #777777;
+}
+
+.whiteButton {
+    border-color: #fff;
+    color: #fff;
+}
+
 
 .orangeButton:hover {
     background-color: rgba(254, 196, 110, 0.3);
@@ -67,4 +82,12 @@
 
 .purpleButton:hover {
     background-color: rgba(201, 110, 254, 0.3);
+}
+
+.grayButton:hover {
+    background-color: rgb(119, 119, 119, 0.3);
+}
+
+.whiteButton:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
