@@ -3,7 +3,7 @@ import classes from './sweWinKeyboard.module.scss';
 
 import Keyboard from '../../../KeyBoard/Keyboard';
 
-const SweWinKeyboard = () => {
+const SweWinKeyboard = ({keyEnter, keyLeave, clearIndicators}) => {
     const defaultWidth = '50px';
     let sweWinKeys = [
         [
@@ -81,6 +81,9 @@ const SweWinKeyboard = () => {
     return (
         <Keyboard 
             keys = {sweWinKeys}
+            keyEnter = {keyEnter}
+            keyLeave = {keyLeave}
+            clearIndicators = {clearIndicators}
         />
     )
 }

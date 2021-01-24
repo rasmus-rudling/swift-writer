@@ -2,9 +2,12 @@ import React from 'react';
 import classes from './keyboard.module.scss';
 import Key from './Key/Key';
 
-const Keyboard = ({keys}) => {
+const Keyboard = ({keys, keyEnter, keyLeave, clearIndicators}) => {
     return (
-        <div className={classes.Keyboard}>
+        <div 
+            className={classes.Keyboard}
+            onMouseEnter = {clearIndicators}
+        >
             {
                 keys.map(keyRow => (
                     <div className={classes.row}>
@@ -16,6 +19,8 @@ const Keyboard = ({keys}) => {
                                     altGrChar = {key.altChar}
                                     width = {key.width}
                                     finger = {key.finger}
+                                    keyLeave = {keyLeave}
+                                    keyEnter = {keyEnter}
                                 />
                             ))
                         }

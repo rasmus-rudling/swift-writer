@@ -1,7 +1,16 @@
 import React from 'react';
 import classes from './key.module.scss';
 
-const Key = ({char, shiftChar, altGrChar, width, finger, active=true}) => {
+const Key = ({
+    char, 
+    shiftChar, 
+    altGrChar, 
+    width, 
+    finger, 
+    keyLeave,
+    keyEnter, 
+    active=true
+}) => {
     let keyWidth, 
         BGColor, 
         borderColor,
@@ -58,7 +67,7 @@ const Key = ({char, shiftChar, altGrChar, width, finger, active=true}) => {
         keyWidth = width;
     }
 
-    if (char === 'F' || char === 'J') {
+    if ('FfJj'.includes(char)) {
         hasMarker = true;
     } else {
         hasMarker = false;
@@ -76,6 +85,8 @@ const Key = ({char, shiftChar, altGrChar, width, finger, active=true}) => {
             style={{
                 "width": keyWidth,
             }}
+            onMouseEnter={() => keyEnter(finger)}
+            onMouseLeave={() => keyLeave()}
         >
             {char}
 

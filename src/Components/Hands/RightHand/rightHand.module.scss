@@ -1,0 +1,10 @@
+.RightHand {
+    position: relative;
+}
+
+.RightHand img {
+    height: 250px;
+    margin-left: 50px;
+    z-index: 20;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}
