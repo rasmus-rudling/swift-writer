@@ -74,7 +74,7 @@ const FrontPage = () => {
     const [welcomeText, setWelcomeText] = useState("");
     const [charIdx, setCharIdx] = useState(0);
     const [stops, setStops] = useState(findStopsInText(fullWelcomeText));
-    const [wordsPerMinute, setWordsPerMinute] = useState(15);
+    const [wordsPerMinute, setWordsPerMinute] = useState(5);
     const [updateTime, setUpdateTime] = useState(wordsPerMinToUpdateTime(wordsPerMinute, fullWelcomeText));
     const [activeKey, setActiveKey] = useState();
     const [allKeysActive, setAllKeysActive] = useState(true);

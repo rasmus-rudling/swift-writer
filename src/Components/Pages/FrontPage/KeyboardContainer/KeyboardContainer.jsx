@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import LeftHand from '../../Hands/LeftHand/LeftHand';
-import RightHand from '../../Hands/RightHand/RightHand';
-import SweWinKeyboard from '../../Keyboards/Swedish/Windows/SweWinKeyboard';
+import LeftHand from '../../../Hands/LeftHand/LeftHand';
+import RightHand from '../../../Hands/RightHand/RightHand';
+import SweWinKeyboard from '../../../Keyboards/Swedish/Windows/SweWinKeyboard';
 import classes from './keyboardContainer.module.scss';
 
 const KeyboardContainer = ({keyboardType, activeKey, updateTime, allKeysActive}) => {
