@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './textMarker.module.scss';
 
-const TextMarker = ({height}) => {
+const TextMarker = ({hide}) => {
+    const [showMarker, setShowMarker] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowMarker(!showMarker);
+        }, 700)
+    }, [showMarker])
+    
     return (
-        <div 
+        <span 
             className={classes.TextMarker}
-            style={{
-                "height": height
+            style = {{
+                opacity: (showMarker && !hide) ? 1 : 0
             }}
-        />
+        >|</span>
     )
 }
 

@@ -4,6 +4,8 @@ import classes from './signUpPage.module.scss';
 import findStopsInText from '../../Utility/findStopsInText';
 import wordsPerMinToUpdateTime from '../../Utility/wordsPerMinToUpdateTime';
 
+import TextMarker from '../../Common/TextMarker/TextMarker';
+
 const SignUpPage = () => {
     const fullHeaderText = "Sign Up";
     const updateTime = wordsPerMinToUpdateTime(50, fullHeaderText);
@@ -11,6 +13,7 @@ const SignUpPage = () => {
     const [headerText, setHeaderText] = useState("_");
     const [stops, setStops] = useState(findStopsInText(fullHeaderText));
     const [charIdx, setCharIdx] = useState(0);
+    const [animationFinished, setAnimationFinished] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
@@ -20,22 +23,27 @@ const SignUpPage = () => {
                 setStops(tempStops);
             } else if (charIdx < fullHeaderText.length) {
                 let newChar = fullHeaderText.charAt(charIdx);
-                let textWithoutMarker = headerText.substr(0, headerText.length-1);
 
-                if (charIdx == fullHeaderText.length - 1) {
-                    setHeaderText(textWithoutMarker.concat(newChar));
+                if (charIdx === 0) {
+                    setHeaderText(newChar);
                 } else {
-                    setHeaderText(textWithoutMarker.concat(newChar).concat('_'));
+                    setHeaderText(headerText.concat(newChar));
                 }
                 
                 setCharIdx(charIdx + 1);
-            } 
+            } else {
+                setAnimationFinished(true);
+            }
         }, updateTime);
     }, [charIdx, stops]);
+    
 
     return (
         <div className={classes.SignUpPage}>
-            <h1>{headerText}</h1>
+            <h1>
+                {headerText}
+                <TextMarker hide={animationFinished} />
+            </h1>
         </div>
     )
 }

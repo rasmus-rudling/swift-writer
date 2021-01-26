@@ -85,19 +85,18 @@ const FrontPage = () => {
                 } else if (charIdx < fullWelcomeText.length) {
                     let newChar = fullWelcomeText.charAt(charIdx);
                     activateKeyHandler(newChar);
-                    let textWithoutMarker = welcomeText.substr(0, welcomeText.length-1);
 
-                    if (charIdx == fullWelcomeText.length - 1) {
-                        setWelcomeText(textWithoutMarker.concat(newChar));
+                    if (charIdx === 0) {
+                        setWelcomeText(newChar);
                     } else {
-                        setWelcomeText(textWithoutMarker.concat(newChar).concat('_'));
+                        setWelcomeText(welcomeText.concat(newChar));
                     }
                     
                     setCharIdx(charIdx + 1);
                 } else {
                     setAnimationFinished(true);
                     setTimeout(() => {
-                        setWelcomeText("");
+                        setWelcomeText(" ");
                         setCharIdx(0);
                         setAnimationFinished(false);
                     }, 2000);
@@ -113,6 +112,7 @@ const FrontPage = () => {
             <WelcomeAnimation 
                 welcomeText = {welcomeText}
                 animationFinished = {animationFinished}
+                playAnimation = {playAnimation}
             />
 
             <PrettoSlider
