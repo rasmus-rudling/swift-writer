@@ -12,6 +12,10 @@ import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import PlayIcon from '@material-ui/icons/PlayArrow';
 import PauseIcon from '@material-ui/icons/Pause';
 
+import findStopsInText from '../../Utility/findStopsInText';
+import wordsPerMinToUpdateTime from '../../Utility/wordsPerMinToUpdateTime';
+
+
 const PrettoSlider = withStyles({
     root: {
       color: '#FE6E6E',
@@ -42,32 +46,9 @@ const PrettoSlider = withStyles({
     },
   })(Slider);
 
-
 const FrontPage = () => {
     const activateKeyHandler = (keyToActivate) => {
         setActiveKey(keyToActivate);
-    }
-
-    const findStopsInText = (text) => {
-        let stopsInText = [];
-
-        [...text].forEach((char, idx) => {
-            if (char === " ") {
-                stopsInText.push(idx);
-            }
-        })
-
-        return stopsInText;
-    }
-
-    const wordsPerMinToUpdateTime = (wordsPerMinute, text) => {
-        let numberOfStops = findStopsInText(text).length;
-        let numberOfChars = text.length;
-        let numberOfWords = text.split().length;
-        let timeItShouldTake = (numberOfWords * 60) / wordsPerMinute;
-        let updateTimeInSeconds = timeItShouldTake / (numberOfChars + numberOfStops);
-        let updateTimeInMiliSeconds = updateTimeInSeconds * 1000;
-        return updateTimeInMiliSeconds;
     }
 
     const fullWelcomeText = "Welcome to SwiftWriter - an application made to help you type fast and properly!";
@@ -103,7 +84,14 @@ const FrontPage = () => {
                 } else if (charIdx < fullWelcomeText.length) {
                     let newChar = fullWelcomeText.charAt(charIdx);
                     activateKeyHandler(newChar);
-                    setWelcomeText(welcomeText.concat(newChar));
+                    let textWithoutMarker = welcomeText.substr(0, welcomeText.length-1);
+
+                    if (charIdx == fullWelcomeText.length - 1) {
+                        setWelcomeText(textWithoutMarker.concat(newChar));
+                    } else {
+                        setWelcomeText(textWithoutMarker.concat(newChar).concat('_'));
+                    }
+                    
                     setCharIdx(charIdx + 1);
                 } else {
                     setTimeout(() => {
@@ -115,8 +103,17 @@ const FrontPage = () => {
         }, updateTime);
     }, [charIdx, stops, playAnimation]);
 
+    // useEffect(() => {
+    //     axios.get('/solnaWeather')
+    //         .then(response => {
+    //             setWeatherInSolna(response.data);
+    //         });
+    // }, []);
+
     return (
         <div className={classes.FrontPage}>
+            {/* <div>Solna weather: {weatherInSolna}</div> */}
+
             <WelcomeAnimation 
                 welcomeText = {welcomeText}
             />

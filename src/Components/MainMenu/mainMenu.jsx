@@ -11,9 +11,10 @@ import QuickRaceButton from '../Common/Buttons/PrimaryButton/PrimaryButton';
 
 const MainMenu = () => {
     const history = useHistory();
+    let menuClasses = [classes.MainMenu];
 
     return (
-        <div className={classes.MainMenu}>
+        <div className={menuClasses.join(" ")}>
             <div 
                 className={classes.logo}
                 onClick = {() => history.push("/")}
