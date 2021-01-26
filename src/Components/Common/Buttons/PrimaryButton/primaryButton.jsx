@@ -17,6 +17,8 @@ const PrimaryButton = ({colorTheme, text, onClickHandler}) => {
         buttonClass = classes.greenButton;
     } else if (colorTheme === 'purple') {
         buttonClass = classes.purpleButton;
+    } else if (colorTheme === 'white') {
+        buttonClass = classes.whiteButton;
     }
 
     return (

@@ -5,7 +5,7 @@ import findStopsInText from '../../Utility/findStopsInText';
 import wordsPerMinToUpdateTime from '../../Utility/wordsPerMinToUpdateTime';
 
 const LogInPage = () => {
-    const fullHeaderText = "Log In";
+    const fullHeaderText = "Sign In";
     const updateTime = wordsPerMinToUpdateTime(50, fullHeaderText);
     
     const [headerText, setHeaderText] = useState("_");

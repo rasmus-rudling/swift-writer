@@ -28,27 +28,31 @@ const MainMenu = () => {
                 />
 
                 <QuickRaceButton
-                    colorTheme = 'purple'
+                    colorTheme = 'green'
+                    // colorTheme = 'purple'
                     text = 'Quick Contest'
                     onClickHandler = {() => history.push("/contestPage")}
                 />
 
                 <QuickPractiseButton
-                    colorTheme = 'purple'
+                    colorTheme = 'green'
+                    // colorTheme = 'purple'
                     text = 'Quick Practise'
                     onClickHandler = {() => history.push("/practise")}
                 />
 
                 <SignUpButton
                     colorTheme = 'blue'
+                    // colorTheme = 'blue'
                     text = 'Sign up'
                     onClickHandler = {() => history.push("/sign-up")}
                 />
 
                 <LogInButton
-                    colorTheme = 'green'
-                    text = 'Log in'
-                    onClickHandler = {() => history.push("/log-in")}
+                    colorTheme = 'blue'
+                    // colorTheme = 'green'
+                    text = 'Sign in'
+                    onClickHandler = {() => history.push("/sign-in")}
                 />
             </div>
             

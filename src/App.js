@@ -24,7 +24,7 @@ function App() {
                 <FrontPage />
             </Route>
 
-            <Route exact path="/log-in">
+            <Route exact path="/sign-in">
                 <MainMenu />
                 <LogInPage />
             </Route>
