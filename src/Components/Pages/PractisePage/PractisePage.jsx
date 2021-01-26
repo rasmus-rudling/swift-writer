@@ -9,9 +9,9 @@ import TextMarker from '../../Common/TextMarker/TextMarker';
 
 const PractisePage = () => {
     const fullHeaderText = "Quick Practise";
-    const updateTime = wordsPerMinToUpdateTime(35, fullHeaderText);
+    const updateTime = wordsPerMinToUpdateTime(55, fullHeaderText);
     
-    const [headerText, setHeaderText] = useState("_");
+    const [headerText, setHeaderText] = useState(" ");
     const [stops, setStops] = useState(findStopsInText(fullHeaderText));
     const [charIdx, setCharIdx] = useState(0);
     const [animationFinished, setAnimationFinished] = useState(false);

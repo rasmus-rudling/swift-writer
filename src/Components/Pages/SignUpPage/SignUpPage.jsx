@@ -8,9 +8,9 @@ import TextMarker from '../../Common/TextMarker/TextMarker';
 
 const SignUpPage = () => {
     const fullHeaderText = "Sign Up";
-    const updateTime = wordsPerMinToUpdateTime(50, fullHeaderText);
+    const updateTime = wordsPerMinToUpdateTime(70, fullHeaderText);
     
-    const [headerText, setHeaderText] = useState("_");
+    const [headerText, setHeaderText] = useState(" ");
     const [stops, setStops] = useState(findStopsInText(fullHeaderText));
     const [charIdx, setCharIdx] = useState(0);
     const [animationFinished, setAnimationFinished] = useState(false);

@@ -8,7 +8,7 @@ import TextMarker from '../../Common/TextMarker/TextMarker';
 
 const LogInPage = () => {
     const fullHeaderText = "Sign In";
-    const updateTime = wordsPerMinToUpdateTime(50, fullHeaderText);
+    const updateTime = wordsPerMinToUpdateTime(70, fullHeaderText);
     
     const [headerText, setHeaderText] = useState(" ");
     const [stops, setStops] = useState(findStopsInText(fullHeaderText));
