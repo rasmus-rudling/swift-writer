@@ -1,11 +1,11 @@
 .FrontPage {
-    height: calc(100vh - 80px);
+    // height: calc(100vh - 80px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 20px 0px;
+    padding: 100px 0 20px 0;
     text-align: center;
-    // background-color: rgb(254, 196, 110, 0.25);
-    background-color: rgb(254, 110, 110, 0.1);
+    background-color: rgb(191, 191, 191, 0.1);
 }
 
 .mappingText {

@@ -1,3 +1,5 @@
+
+
 .orangeButton,  
 .redButton,
 .blueButton,
@@ -16,42 +18,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-width: 1px;
+    border-style: solid;
 }
 
 .orangeButton {
     background-color: #FEC46E;
-    border: 2px solid #BF9452;
+    border-color:#BF9452;
 }
 
 .redButton {
     background-color: #FE6E6E;
-    border: 2px solid #BF5252;
+    border-color:#BF5252;
 }
 
 .blueButton {
     background-color: #6EB6FE;
-    border: 2px solid #5289BF;
+    border-color:#5289BF;
 }
 
 .blackButton {
     background-color: #232323;
-    border: 2px solid #000;
+    border-color:#000;
 }
 
 .greenButton {
     background-color: #60D97D; 
-    border: 2px solid #439957;
+    border-color:#439957;
 }
 
 .purpleButton {
     background-color: #CA6EFE;
-    border: 2px solid #9752BF;
+    border-color:#9752BF;
 }
 
 .whiteButton {
     color: #BF5252;
     background-color: #fff;
-    border: 2px solid #BF5252;
+    border-color:#BF5252;
 }
 
 

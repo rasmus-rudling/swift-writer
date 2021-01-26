@@ -1,13 +1,13 @@
 .FeedbackPage {
-    padding: 20px 30px;
+    padding: 100px 30px 20px 30px;
     margin: 0 auto;
-    background-color: #232323;
-    height: calc(100vh - 80px);
+    background-color: rgb(191, 191, 191, 0.1);
+    height: 100vh;
     display: flex;
     justify-content: center;
 }
 
 .FeedbackPage h1 {
     font-family: 'Pacifico';
-    color: #fff;
+    color: #FE6E6E;
 }

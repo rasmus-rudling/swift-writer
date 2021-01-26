@@ -52,7 +52,7 @@ const FrontPage = () => {
     }
 
     const fullWelcomeText = "Welcome to SwiftWriter - an application made to help you type fast and properly!";
-    const [welcomeText, setWelcomeText] = useState("");
+    const [welcomeText, setWelcomeText] = useState(" ");
     const [charIdx, setCharIdx] = useState(0);
     const [stops, setStops] = useState(findStopsInText(fullWelcomeText));
     const [wordsPerMinute, setWordsPerMinute] = useState(5);
@@ -60,6 +60,7 @@ const FrontPage = () => {
     const [activeKey, setActiveKey] = useState();
     const [allKeysActive, setAllKeysActive] = useState(true);
     const [playAnimation, setPlayAnimation] = useState(true);
+    const [animationFinished, setAnimationFinished] = useState(false);
 
     const allKeysActiveHandler = () => {
         setAllKeysActive(!allKeysActive);
@@ -94,21 +95,16 @@ const FrontPage = () => {
                     
                     setCharIdx(charIdx + 1);
                 } else {
+                    setAnimationFinished(true);
                     setTimeout(() => {
                         setWelcomeText("");
                         setCharIdx(0);
+                        setAnimationFinished(false);
                     }, 2000);
                 }
             }
         }, updateTime);
     }, [charIdx, stops, playAnimation]);
-
-    // useEffect(() => {
-    //     axios.get('/solnaWeather')
-    //         .then(response => {
-    //             setWeatherInSolna(response.data);
-    //         });
-    // }, []);
 
     return (
         <div className={classes.FrontPage}>
@@ -116,6 +112,7 @@ const FrontPage = () => {
 
             <WelcomeAnimation 
                 welcomeText = {welcomeText}
+                animationFinished = {animationFinished}
             />
 
             <PrettoSlider

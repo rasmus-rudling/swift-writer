@@ -2,11 +2,12 @@
     height: 80px;
     width: 100%;
     display: flex;
-    background-color: #FE6E6E;
+    background-color: #fff;
     align-items: center;
     justify-content: space-between;
     padding: 0 25px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    position: fixed;
 }
 
 
@@ -26,8 +27,9 @@
 
 .logo {
     font-family: 'Pacifico', 'Roboto', sans-serif;
-    color: #fff;
+    color: #FE6E6E;
     font-size: 36px;
     cursor: pointer;
     user-select: none;
+    padding-bottom: 5px;
 }

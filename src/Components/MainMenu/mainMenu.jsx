@@ -22,34 +22,34 @@ const MainMenu = () => {
 
             <div className={classes.rightSideContent}>
                 <FeedbackButton 
-                    colorTheme = 'white'
+                    colorTheme = 'red'
                     text = 'Give Feedback'
                     onClickHandler = {() => history.push("/feedback")}
                 />
 
                 <QuickRaceButton
-                    colorTheme = 'green'
+                    colorTheme = 'red'
                     // colorTheme = 'purple'
                     text = 'Quick Contest'
                     onClickHandler = {() => history.push("/contestPage")}
                 />
 
                 <QuickPractiseButton
-                    colorTheme = 'green'
+                    colorTheme = 'red'
                     // colorTheme = 'purple'
                     text = 'Quick Practise'
                     onClickHandler = {() => history.push("/practise")}
                 />
 
                 <SignUpButton
-                    colorTheme = 'blue'
+                    colorTheme = 'red'
                     // colorTheme = 'blue'
                     text = 'Sign up'
                     onClickHandler = {() => history.push("/sign-up")}
                 />
 
                 <LogInButton
-                    colorTheme = 'blue'
+                    colorTheme = 'red'
                     // colorTheme = 'green'
                     text = 'Sign in'
                     onClickHandler = {() => history.push("/sign-in")}
