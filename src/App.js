@@ -9,7 +9,7 @@ import {
 
 import MainMenu from './Components/MainMenu/MainMenu';
 import FrontPage from './Components/Pages/FrontPage/FrontPage';
-import LogInPage from './Components/Pages/LogInPage/LogInPage';
+import SignInPage from './Components/Pages/SignInPage/SignInPage';
 import SignUpPage from './Components/Pages/SignUpPage/SignUpPage';
 import PractisePage from './Components/Pages/PractisePage/PractisePage';
 import ContestPage from './Components/Pages/ContestPage/ContestPage';
@@ -26,7 +26,7 @@ function App() {
 
             <Route exact path="/sign-in">
                 <MainMenu />
-                <LogInPage />
+                <SignInPage />
             </Route>
 
             <Route exact path="/sign-up">

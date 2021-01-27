@@ -1,13 +1,15 @@
-.LogInPage {
+.SignInPage {
     padding: 100px 30px 20px 30px;
     margin: 0 auto;
-    background-color: rgb(191, 191, 191, 0.1);
+    background-color: rgba(191, 191, 191, 0.1);
     height: 100vh;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.LogInPage h1 {
+.SignInPage h1 {
     font-family: 'Pacifico';
     color: #FE6E6E;
 }
+

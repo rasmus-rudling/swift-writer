@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import classes from './signUpPage.module.scss';
+import classes from './signInPage.module.scss';
 import SWLogo from '../../../Resources/Icons/SWLogo.svg';
 
 import findStopsInText from '../../Utility/findStopsInText';
@@ -7,7 +7,7 @@ import wordsPerMinToUpdateTime from '../../Utility/wordsPerMinToUpdateTime';
 
 import TextMarker from '../../Common/TextMarker/TextMarker';
 
-import SignUpForm from '../../Common/Forms/FormContainer/FormContainer';
+import SignInForm from '../../Common/Forms/FormContainer/FormContainer';
 import EmailInput from '../../Common/Forms/ShortTextInput/ShortTextInput';
 import UsernameInput from '../../Common/Forms/ShortTextInput/ShortTextInput';
 import PasswordInput from '../../Common/Forms/ShortTextInput/ShortTextInput';
@@ -17,7 +17,7 @@ import OrDivider from '../../Common/Forms/Divider/Divider';
 import GoogleSignUpButton from '../../Common/Forms/FormButtons/GoogleAuthButton/GoogleAuthButton';
 
 const SignUpPage = () => {
-    const fullHeaderText = "Sign Up";
+    const fullHeaderText = "Sign In";
     const updateTime = wordsPerMinToUpdateTime(75, fullHeaderText);
     
     const [headerText, setHeaderText] = useState(" ");
@@ -49,31 +49,30 @@ const SignUpPage = () => {
     
 
     return (
-        <div className={classes.SignUpPage}>
+        <div className={classes.SignInPage}>
             <h1>
                 {headerText}
                 <TextMarker hide={animationFinished} />
             </h1>
 
-            <SignUpForm 
+            <SignInForm 
                 logo = {SWLogo}
                 show = {animationFinished}
             >
                 <EmailInput inputName = "Email" />
                 <UsernameInput inputName = "Username" />
-                <PasswordInput inputName = "Password" inputType="password"/>
-                <RepeatPasswordInput inputName = "Repeat Password" inputType="password"/>
+                <PasswordInput inputName = "Password" inputType="password" />
 
                 <SubmitButton 
-                    text = "Create free account"
+                    text = "Sign in"
                     // onChange = {e => e.preventDefault()}
                 />
                 <OrDivider text="or" />
                 <GoogleSignUpButton
-                    text="Sign up with Google"
-                    onClick = {() => console.log("User wants to sign up with Google!")}
+                    text="Sign in with Google"
+                    onClick = {() => console.log("User wants to sign in with Google!")}
                 />
-            </SignUpForm>
+            </SignInForm>
         </div>
     )
 }

@@ -1,0 +1,20 @@
+.ShortTextInput {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.ShortTextInput input {
+    margin-top: 2px;
+    padding: 10px 12px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 34px;
+}
+
+.ShortTextInput input:focus {
+    outline: none;
+    border: 1px solid #FE6E6E;
+}

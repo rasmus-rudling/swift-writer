@@ -1,0 +1,35 @@
+.GoogleAuthButton {
+    height: 34px;
+    background-color: #518EF8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 2px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.iconContainer {
+    background-color: #fff;
+    border-radius: 2px;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.iconContainer img {
+    height: 74%;
+    margin: 0;
+}
+
+.GoogleAuthButton:hover {
+    background-color: #3D6AB8;
+}
