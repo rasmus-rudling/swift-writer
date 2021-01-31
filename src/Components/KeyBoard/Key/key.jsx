@@ -4,7 +4,7 @@ import classes from './key.module.scss';
 const Key = ({
     char, 
     shiftChar, 
-    altGrChar, 
+    altChar, 
     width, 
     finger, 
     keyLeave,
@@ -149,6 +149,19 @@ const Key = ({
         transitionTime = "none";
     }
 
+    let topLeft, topRight,
+        bottomLeft, bottomRight;
+
+    if ("0123456789<,.-§¨'".includes(char)) {
+        bottomLeft = char;
+        topLeft = shiftChar;
+        bottomRight = altChar;
+    } else {
+        topLeft = char;
+        bottomLeft = shiftChar; // Måste lösa detta, bara stora bokstäver ska synas på tangentbordet
+        bottomRight = altChar;
+    }
+
     return (
         <div 
             className={keyClasses.join(" ")}
@@ -159,7 +172,15 @@ const Key = ({
             onMouseEnter={() => keyEnter(finger)}
             onMouseLeave={() => keyLeave()}
         >
-            {char}
+            <div className={classes.topRow}>
+                
+            </div>
+
+
+            <div className={classes.bottomRow}>
+                <div>{char}</div>
+            </div>
+            
 
             <div 
                 className={keyMarkerClass}

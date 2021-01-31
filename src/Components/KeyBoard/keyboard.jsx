@@ -33,7 +33,7 @@ const Keyboard = ({
                                 <Key 
                                     char = {key.char}
                                     shiftChar = {key.shiftChar} 
-                                    altGrChar = {key.altChar}
+                                    altChar = {key.altChar}
                                     width = {key.width}
                                     finger = {key.finger}
                                     keyLeave = {keyLeave}

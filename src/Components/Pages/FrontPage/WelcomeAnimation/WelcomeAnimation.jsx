@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import classes from './welcomeAnimation.module.scss';
 
 import TextMarker from '../../../Common/TextMarker/TextMarker';
 
-const WelcomeAnimation = ({welcomeText, animationFinished, playAnimation}) => {
+const WelcomeAnimation = ({welcomeText}) => {
     return (
         <div className={classes.WelcomeAnimation}>
             {welcomeText.substring(0, 11)}

@@ -1,7 +1,12 @@
 .WelcomeAnimation {
     margin: 0 auto;
-    font-size: 2rem;
+    font-size: 2rem !important;
     font-weight: 300;
+}
+
+.WelcomeAnimation mark,
+.WelcomeAnimation i {
+    font-size: 2rem !important;
 }
 
 .logoText {

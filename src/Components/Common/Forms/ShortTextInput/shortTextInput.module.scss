@@ -1,8 +1,6 @@
 .ShortTextInput {
     display: flex;
     flex-direction: column;
-    font-weight: 500;
-    font-size: 12px;
 }
 
 .ShortTextInput input {
@@ -17,4 +15,13 @@
 .ShortTextInput input:focus {
     outline: none;
     border: 1px solid #FE6E6E;
+}
+
+.ShortTextInput h4 {
+    font-size: 13px;
+}
+
+.ShortTextInput input:disabled {
+    background-color: rgb(228, 228, 228);
+    cursor: not-allowed;
 }

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import classes from './frontPage.module.scss';
+
+import Slider from '@material-ui/core/Slider';
 import { withStyles } from '@material-ui/core/styles'
 
 import KeyboardContainer from './KeyboardContainer/KeyboardContainer';
-
 import WelcomeAnimation from './WelcomeAnimation/WelcomeAnimation';
-import Slider from '@material-ui/core/Slider';
-
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import PlayIcon from '@material-ui/icons/PlayArrow';

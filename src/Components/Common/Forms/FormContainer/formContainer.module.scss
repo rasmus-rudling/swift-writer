@@ -7,7 +7,7 @@
     flex-direction: column;
     padding: 0 20px 20px 20px;
     background-color: #fff;
-    transition: 0.7s;
+    transition: 1s;
     transition-timing-function: ease-in-out;
 }
 
@@ -23,4 +23,15 @@
 
 .FormContainer div:not(:last-child) {
     margin-bottom: 15px;
+}
+
+.FormContainer h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: -2px;
+    margin-bottom: 7px;
+}
+
+.FormContainer h4 {
+    font-weight: 500;
 }

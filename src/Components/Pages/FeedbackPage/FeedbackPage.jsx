@@ -14,6 +14,7 @@ const FeedbackPage = () => {
     const [stops, setStops] = useState(findStopsInText(fullHeaderText));
     const [charIdx, setCharIdx] = useState(0);
     const [animationFinished, setAnimationFinished] = useState(false);
+    const [showContent, setShowContent] = useState(false);
     
     useEffect(() => {
         setTimeout(() => {
@@ -35,6 +36,8 @@ const FeedbackPage = () => {
                 setAnimationFinished(true);
             }
         }, updateTime);
+
+        setShowContent(true);
     }, [charIdx, stops]);
 
     return (

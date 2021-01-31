@@ -24,6 +24,7 @@ const SignUpPage = () => {
     const [stops, setStops] = useState(findStopsInText(fullHeaderText));
     const [charIdx, setCharIdx] = useState(0);
     const [animationFinished, setAnimationFinished] = useState(false);
+    const [showContent, setShowContent] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
@@ -45,6 +46,8 @@ const SignUpPage = () => {
                 setAnimationFinished(true);
             }
         }, updateTime);
+
+        setShowContent(true);
     }, [charIdx, stops]);
     
 
@@ -56,11 +59,9 @@ const SignUpPage = () => {
             </h1>
 
             <SignInForm 
-                logo = {SWLogo}
-                show = {animationFinished}
+                show = {showContent}
             >
-                <EmailInput inputName = "Email" />
-                <UsernameInput inputName = "Username" />
+                <EmailInput inputName = "Email or Username" />
                 <PasswordInput inputName = "Password" inputType="password" />
 
                 <SubmitButton 

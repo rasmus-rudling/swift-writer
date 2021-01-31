@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import classes from './signUpPage.module.scss';
-import SWLogo from '../../../Resources/Icons/SWLogo.svg';
 
 import findStopsInText from '../../Utility/findStopsInText';
 import wordsPerMinToUpdateTime from '../../Utility/wordsPerMinToUpdateTime';
@@ -24,6 +23,7 @@ const SignUpPage = () => {
     const [stops, setStops] = useState(findStopsInText(fullHeaderText));
     const [charIdx, setCharIdx] = useState(0);
     const [animationFinished, setAnimationFinished] = useState(false);
+    const [showContent, setShowContent] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
@@ -45,6 +45,8 @@ const SignUpPage = () => {
                 setAnimationFinished(true);
             }
         }, updateTime);
+
+        setShowContent(true);
     }, [charIdx, stops]);
     
 
@@ -56,8 +58,7 @@ const SignUpPage = () => {
             </h1>
 
             <SignUpForm 
-                logo = {SWLogo}
-                show = {animationFinished}
+                show = {showContent}
             >
                 <EmailInput inputName = "Email" />
                 <UsernameInput inputName = "Username" />

@@ -11,8 +11,8 @@ import MainMenu from './Components/MainMenu/MainMenu';
 import FrontPage from './Components/Pages/FrontPage/FrontPage';
 import SignInPage from './Components/Pages/SignInPage/SignInPage';
 import SignUpPage from './Components/Pages/SignUpPage/SignUpPage';
-import PractisePage from './Components/Pages/PractisePage/PractisePage';
-import ContestPage from './Components/Pages/ContestPage/ContestPage';
+import QuickPractisePage from './Components/Pages/QuickPractisePage/QuickPractisePage';
+import QuickContestPage from './Components/Pages/QuickContestPage/QuickContestPage';
 import FeedbackPage from './Components/Pages/FeedbackPage/FeedbackPage';
 
 function App() {
@@ -36,12 +36,12 @@ function App() {
 
             <Route exact path="/practise">
                 <MainMenu />
-                <PractisePage />
+                <QuickPractisePage />
             </Route>
 
             <Route exact path="/contestPage">
                 <MainMenu />
-                <ContestPage />
+                <QuickContestPage />
             </Route>
 
             <Route exact path="/feedback">
