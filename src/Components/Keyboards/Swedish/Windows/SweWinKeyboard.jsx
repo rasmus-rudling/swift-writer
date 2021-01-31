@@ -9,7 +9,8 @@ const SweWinKeyboard = ({
     clearIndicators, 
     activeKey,
     updateTime,
-    allKeysActive
+    allKeysActive,
+    extraClass
 }) => {
     const defaultWidth = '50px';
     let sweWinKeys = [
@@ -31,45 +32,45 @@ const SweWinKeyboard = ({
         ],
         [
             {"char":'Tab ↹', "shiftChar":'', "altGrChar":'', "width":"75px", "finger":"pinkyL"},
-            {"char":'q', "shiftChar":'Q', "altGrChar":'', "width":defaultWidth, "finger":"pinkyL"},
-            {"char":'w', "shiftChar":'W', "altGrChar":'', "width":defaultWidth, "finger":"ringL"},
-            {"char":'e', "shiftChar":'E', "altGrChar":'€', "width":defaultWidth, "finger":"middleL"},
-            {"char":'r', "shiftChar":'R', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
-            {"char":'t', "shiftChar":'T', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
-            {"char":'y', "shiftChar":'Y', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
-            {"char":'u', "shiftChar":'U', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
-            {"char":'i', "shiftChar":'I', "altGrChar":'', "width":defaultWidth, "finger":"middleR"},
-            {"char":'o', "shiftChar":'O', "altGrChar":'', "width":defaultWidth, "finger":"ringR"},
-            {"char":'p', "shiftChar":'P', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
-            {"char":'å', "shiftChar":'Å', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
+            {"char":'Q', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"pinkyL"},
+            {"char":'W', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"ringL"},
+            {"char":'E', "shiftChar":'', "altGrChar":'€', "width":defaultWidth, "finger":"middleL"},
+            {"char":'R', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
+            {"char":'T', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
+            {"char":'Y', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
+            {"char":'U', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
+            {"char":'I', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"middleR"},
+            {"char":'O', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"ringR"},
+            {"char":'P', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
+            {"char":'Å', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
             {"char":'¨', "shiftChar":'^', "altGrChar":'~', "width":defaultWidth, "finger":"pinkyR"},
         ], 
         [
             {"char":'CapsLock', "shiftChar":'', "altGrChar":'', "width":"85px", "finger":"pinkyL"},
-            {"char":'a', "shiftChar":'A', "altGrChar":'', "width":defaultWidth, "finger":"pinkyL"},
-            {"char":'s', "shiftChar":'S', "altGrChar":'', "width":defaultWidth, "finger":"ringL"},
-            {"char":'d', "shiftChar":'D', "altGrChar":'', "width":defaultWidth, "finger":"middleL"},
-            {"char":'f', "shiftChar":'F', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
-            {"char":'g', "shiftChar":'G', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
-            {"char":'h', "shiftChar":'H', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
-            {"char":'j', "shiftChar":'J', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
-            {"char":'k', "shiftChar":'K', "altGrChar":'', "width":defaultWidth, "finger":"middleR"},
-            {"char":'l', "shiftChar":'L', "altGrChar":'', "width":defaultWidth, "finger":"ringR"},
-            {"char":'ö', "shiftChar":'Ö', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
-            {"char":'ä', "shiftChar":'Ä', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
+            {"char":'A', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"pinkyL"},
+            {"char":'S', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"ringL"},
+            {"char":'D', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"middleL"},
+            {"char":'F', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
+            {"char":'G', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
+            {"char":'H', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
+            {"char":'J', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
+            {"char":'K', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"middleR"},
+            {"char":'L', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"ringR"},
+            {"char":'Ö', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
+            {"char":'Ä', "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
             {"char":"'", "shiftChar":'*', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
             {"char":"↲ Enter", "shiftChar":'', "altGrChar":'', "width":"75px", "finger":"pinkyR"}
         ],
         [
             {"char":"⇧ Shift", "shiftChar":'', "altGrChar":'', "width":"75px", "finger":"pinkyL"},
             {"char":"<", "shiftChar":'>', "altGrChar":'|', "width":defaultWidth, "finger":"pinkyL"},
-            {"char":"z", "shiftChar":'Z', "altGrChar":'', "width":defaultWidth, "finger":"pinkyL"},
-            {"char":"x", "shiftChar":'X', "altGrChar":'', "width":defaultWidth, "finger":"ringL"},
-            {"char":"c", "shiftChar":'C', "altGrChar":'', "width":defaultWidth, "finger":"middleL"},
-            {"char":"v", "shiftChar":'V', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
-            {"char":"b", "shiftChar":'B', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
-            {"char":"n", "shiftChar":'N', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
-            {"char":"m", "shiftChar":'M', "altGrChar":'µ', "width":defaultWidth, "finger":"indexR"},
+            {"char":"Z", "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"pinkyL"},
+            {"char":"Z", "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"ringL"},
+            {"char":"C", "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"middleL"},
+            {"char":"V", "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
+            {"char":"B", "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexL"},
+            {"char":"N", "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"indexR"},
+            {"char":"M", "shiftChar":'', "altGrChar":'µ', "width":defaultWidth, "finger":"indexR"},
             {"char":",", "shiftChar":';', "altGrChar":'', "width":defaultWidth, "finger":"middleR"},
             {"char":".", "shiftChar":':', "altGrChar":'', "width":defaultWidth, "finger":"ringR"},
             {"char":"-", "shiftChar":'_', "altGrChar":'', "width":defaultWidth, "finger":"pinkyR"},
@@ -77,7 +78,7 @@ const SweWinKeyboard = ({
         ],
         [
             {"char":"Ctrl", "shiftChar":'', "altGrChar":'', "width":"85px", "finger":"pinkyL"},
-            {"char":"win", "shiftChar":'', "altGrChar":'', "width":defaultWidth, "finger":"pinkyL"},
+            {"char":"win", "shiftChar":'', "altGrChar":'', "width":"51px", "finger":"pinkyL"},
             {"char":"Alt", "shiftChar":'', "altGrChar":'', "width":"85px", "finger":"pinkyL"},
             {"char":"Space", "shiftChar":'', "altGrChar":'', "width":"350px", "finger":"thumbR"},
             {"char":"Alt Gr", "shiftChar":'', "altGrChar":'', "width":"85px", "finger":"ringR"},
@@ -94,6 +95,7 @@ const SweWinKeyboard = ({
             activeKey = {activeKey}
             updateTime = {updateTime}
             allKeysActive = {allKeysActive}
+            extraClass = {extraClass}
         />
     )
 }

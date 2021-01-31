@@ -4,9 +4,15 @@ import classes from './leftHand.module.scss';
 import leftHandImg from '../../../Resources/Images/leftHand.png';
 import FingerIndicator from '../FingerIndicator/FingerIndicator';
 
-const LeftHand = ({highlightedFingers, updateTime}) => {
+const LeftHand = ({highlightedFingers, updateTime, extraClass}) => {
+    let handClasses = [classes.LeftHand];
+
+    if (extraClass !== undefined) {
+        handClasses.push(extraClass);
+    }
+
     return (
-        <div className={classes.LeftHand}>
+        <div className={handClasses.join(" ")}>
             <FingerIndicator 
                 color="red" 
                 top = "50px"

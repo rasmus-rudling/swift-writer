@@ -159,7 +159,6 @@ const FrontPage = () => {
                     </ToggleButtonGroup>
                 </div>
                 
-                
                 <div className={classes.setting}>
                     <mark className={classes.mappingText}>Key-finger mapping</mark>
                     <ToggleButtonGroup

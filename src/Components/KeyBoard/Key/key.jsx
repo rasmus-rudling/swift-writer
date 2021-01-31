@@ -149,8 +149,10 @@ const Key = ({
         transitionTime = "none";
     }
 
-    let topLeft, topRight,
-        bottomLeft, bottomRight;
+    let topLeft = "", 
+        topRight = "",
+        bottomLeft = "", 
+        bottomRight = "";
 
     if ("0123456789<,.-§¨'".includes(char)) {
         bottomLeft = char;
@@ -172,16 +174,20 @@ const Key = ({
             onMouseEnter={() => keyEnter(finger)}
             onMouseLeave={() => keyLeave()}
         >
-            <div className={classes.topRow}>
-                
-            </div>
-
-
-            <div className={classes.bottomRow}>
-                <div>{char}</div>
-            </div>
-            
-
+            {
+                keyWidth !== "50px"
+                  ? <div>{char}</div>
+                  : <div>
+                        <div className={classes.topRow}>
+                            {topLeft === "" ? <div></div> : <div>{topLeft}</div>}
+                            {topRight === "" ? <div></div> : <div>{topRight}</div>}
+                        </div>
+                        <div className={classes.bottomRow}>
+                            {bottomLeft === "" ? <div></div> : <div>{bottomLeft}</div>}
+                            {bottomRight === "" ? <div></div> : <div>{bottomRight}</div>}
+                        </div>
+                    </div>
+            }
             <div 
                 className={keyMarkerClass}
                 style={{

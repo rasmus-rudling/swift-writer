@@ -18,7 +18,7 @@ const firebaseConfig = {
 };
 
 firebase.default.initializeApp(firebaseConfig);
-const analytics = firebase.default.analytics();
+firebase.default.analytics();
 
 ReactDOM.render(
   <React.StrictMode>

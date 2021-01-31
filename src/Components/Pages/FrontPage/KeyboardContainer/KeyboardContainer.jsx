@@ -75,6 +75,7 @@ const KeyboardContainer = ({keyboardType, activeKey, updateTime, allKeysActive})
                 activeKey = {activeKey}
                 updateTime = {updateTime}
                 allKeysActive = {allKeysActive}
+                extraClass = {classes.keyboard}
             />
         );
     }
@@ -85,11 +86,13 @@ const KeyboardContainer = ({keyboardType, activeKey, updateTime, allKeysActive})
             <LeftHand 
                 highlightedFingers = {highlightedFingers}
                 updateTime = {updateTime}
+                extraClass = {classes.leftHand}
             />
             {Keyboard}
             <RightHand 
                 highlightedFingers = {highlightedFingers}
                 updateTime = {updateTime}
+                extraClass = {classes.rightHand}
             />
         </div>
     )

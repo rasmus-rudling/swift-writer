@@ -4,3 +4,33 @@
     align-items: center;
     margin: 25px auto;
 }
+
+@media (max-width: 1500px) {
+    .KeyboardContainer {
+        flex-wrap: wrap;
+    }
+
+    .leftHand {
+        order: 2;
+        margin-right: 20px;
+    }
+
+    .keyboard {
+        order: 1;
+        margin-bottom: 30px;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .rightHand {
+        margin-left: 20px;
+        order: 3;
+    }
+}
+
+@media (max-width: 1200px) {
+    .keyboard {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -9,8 +9,15 @@ const Keyboard = ({
     clearIndicators, 
     activeKey,
     updateTime,
-    allKeysActive
+    allKeysActive,
+    extraClass
 }) => {
+    let keyboardClasses = [classes.Keyboard];
+
+    if (extraClass !== undefined) {
+        keyboardClasses.push(extraClass);
+    }
+
 
     const keyIsActive = (_key) => {
         if (_key.char === 'Space') {
@@ -22,7 +29,7 @@ const Keyboard = ({
 
     return (
         <div 
-            className={classes.Keyboard}
+            className={keyboardClasses.join(" ")}
             onMouseEnter = {clearIndicators}
         >
             {
@@ -33,7 +40,7 @@ const Keyboard = ({
                                 <Key 
                                     char = {key.char}
                                     shiftChar = {key.shiftChar} 
-                                    altChar = {key.altChar}
+                                    altChar = {key.altGrChar}
                                     width = {key.width}
                                     finger = {key.finger}
                                     keyLeave = {keyLeave}

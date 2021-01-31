@@ -5,7 +5,6 @@ $borderWidth: 1px;
     height: 50px;
     justify-content: center;
     align-items: center;
-    padding: 9px 10px 11px;
     border-radius: 10px;
     user-select: none;
     cursor: pointer;
@@ -16,6 +15,26 @@ $borderWidth: 1px;
 
 .Key:not(:first-child) {
     margin-left: 10px;
+}
+
+.topRow,
+.bottomRow {
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topRow div,
+.bottomRow div {
+    width: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centeredChar {
+
 }
 
 .redKey {
@@ -146,3 +165,4 @@ $borderWidth: 1px;
     background-color: #9752BF;
     border: $borderWidth solid #9752BF;
 }
+

@@ -4,9 +4,14 @@ import rightHandImg from '../../../Resources/Images/rightHand.png';
 
 import FingerIndicator from '../FingerIndicator/FingerIndicator';
 
-const RightHand = ({highlightedFingers, updateTime}) => {
+const RightHand = ({highlightedFingers, updateTime, extraClass}) => {
+    let handClasses = [classes.RightHand];
+
+    if (extraClass !== undefined) {
+        handClasses.push(extraClass);
+    }
     return (
-        <div className={classes.RightHand}>
+        <div className={handClasses.join(" ")}>
             <FingerIndicator 
                 color="purple" 
                 top = "98px"
