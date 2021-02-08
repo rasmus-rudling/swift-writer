@@ -29,7 +29,6 @@ const MainMenu = () => {
 
                 <QuickRaceButton
                     colorTheme = 'red'
-                    // colorTheme = 'purple'
                     text = 'Quick Contest'
                     onClickHandler = {() => history.push("/contestPage")}
                 />

@@ -1,12 +1,18 @@
 import React, { useState, useEffect} from 'react';
 import classes from './feedbackPage.module.scss';
 
+import { useLanguage, useLanguageUpdate } from '../../../Contexts/LanguageContext';
+
 import findStopsInText from '../../Utility/findStopsInText';
 import wordsPerMinToUpdateTime from '../../Utility/wordsPerMinToUpdateTime';
 
 import TextMarker from '../../Common/TextMarker/TextMarker';
+import TestButton from '../../Common/Buttons/TestButton';
 
 const FeedbackPage = () => {
+    const changeLang = useLanguageUpdate();
+    const currLang = useLanguage();
+    
     const fullHeaderText = "Give Feedback";
     const updateTime = wordsPerMinToUpdateTime(50, fullHeaderText);
     
@@ -41,11 +47,14 @@ const FeedbackPage = () => {
     }, [charIdx, stops]);
 
     return (
-        <div className={classes.FeedbackPage}>
+        <div className={classes.FeedbackPage} onClick={() => changeLang("swe")}>
             <h1>
                 {headerText}
                 <TextMarker hide={animationFinished} />
             </h1>
+            {currLang}
+            {/* <TestButton /> */}
+
         </div>
     )
 }

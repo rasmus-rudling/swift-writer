@@ -1,8 +1,9 @@
 import React from 'react';
 import classes from './primaryButton.module.scss';
 
-const PrimaryButton = ({colorTheme, text, onClickHandler}) => {
 
+
+const PrimaryButton = ({colorTheme, text, onClickHandler}) => {
     let buttonClass;
 
     if (colorTheme === 'orange') {

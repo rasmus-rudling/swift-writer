@@ -108,6 +108,8 @@ const FrontPage = () => {
         <div className={classes.FrontPage}>
             {/* <div>Solna weather: {weatherInSolna}</div> */}
 
+            
+
             <WelcomeAnimation 
                 welcomeText = {welcomeText}
                 animationFinished = {animationFinished}
