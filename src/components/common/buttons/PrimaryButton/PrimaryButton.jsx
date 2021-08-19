@@ -1,8 +1,6 @@
 import React from 'react';
 import classes from './primaryButton.module.scss';
 
-
-
 const PrimaryButton = ({colorTheme, text, onClickHandler}) => {
     let buttonClass;
 
@@ -23,12 +21,12 @@ const PrimaryButton = ({colorTheme, text, onClickHandler}) => {
     }
 
     return (
-        <div 
+        <button 
             className={buttonClass}
             onClick = {onClickHandler}
         >
             {text}
-        </div>
+        </button>
     )
 }
 

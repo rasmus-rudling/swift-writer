@@ -1,36 +1,57 @@
 .KeyboardContainer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 25px auto;
 }
 
-@media (max-width: 1500px) {
-    .KeyboardContainer {
-        flex-wrap: wrap;
-    }
+.leftHand {
+    order: 2;
+    margin-right: 20px;
+}
 
-    .leftHand {
-        order: 2;
-        margin-right: 20px;
-    }
+.keyboard {
+    order: 1;
+    margin: 0 auto 30px;
+}
 
+
+.rightHand {
+    margin-left: 20px;
+    order: 3;
+}
+
+@media (min-width: 1134px) {
     .keyboard {
-        order: 1;
-        margin-bottom: 30px;
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-
-    .rightHand {
-        margin-left: 20px;
-        order: 3;
+        margin: 0 100px 30px;
     }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1350px) {
     .keyboard {
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 200px 30px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .KeyboardContainer {
+        flex-wrap: nowrap;
+    }
+
+    .leftHand {
+        order: 1;
+        margin-right: 35px;
+    }
+    
+    .keyboard {
+        order: 2;
+        margin: 0 auto 30px;
+    }
+    
+    
+    .rightHand {
+        margin-left: 35px;
+        order: 3;
     }
 }

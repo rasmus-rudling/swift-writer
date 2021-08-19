@@ -52,7 +52,7 @@ const FeedbackPage = () => {
                 {headerText}
                 <TextMarker hide={animationFinished} />
             </h1>
-            {currLang}
+            {/* {currLang} */}
             {/* <TestButton /> */}
 
         </div>

@@ -24,12 +24,12 @@ const SecondaryButton = ({colorTheme, text, onClickHandler}) => {
     }
 
     return (
-        <div 
+        <button 
             className={buttonClass}
             onClick = {onClickHandler}
         >
             {text}
-        </div>
+        </button>
     )
 }
 
