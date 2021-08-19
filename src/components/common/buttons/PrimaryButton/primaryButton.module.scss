@@ -1,4 +1,4 @@
-
+@import 'src/variables';
 
 .orangeButton,  
 .redButton,
@@ -11,7 +11,7 @@
     border-radius: 3px;
     cursor: pointer;
     height: 30px;
-    padding: 3px 15px 0;
+    padding: 2px 15px 0;
     text-transform: capitalize;
     user-select: none;
     transition: .2s;

@@ -1,8 +1,10 @@
+@import 'src/variables';
+
 .MainNavigation {
     height: 80px;
     width: 100%;
     display: flex;
-    background-color: #fff;
+    background-color: white;
     align-items: center;
     justify-content: space-between;
     padding: 0 25px;
