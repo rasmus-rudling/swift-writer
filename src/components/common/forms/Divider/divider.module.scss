@@ -1,16 +1,16 @@
-@import 'src/variables';
+@import "src/variables";
 
 .Divider {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: #bfbfbf;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	color: $gray3;
 }
 
 .horizontalLine {
-    background-color: #bfbfbf;
-    height: 2px;
-    border-radius: 2px;
-    width: 75px;
-    margin: 0 !important;
+	background-color: $gray3;
+	height: 2px;
+	border-radius: 2px;
+	width: 75px;
+	margin: 0 !important;
 }

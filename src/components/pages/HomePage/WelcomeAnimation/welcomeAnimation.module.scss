@@ -1,18 +1,18 @@
-@import 'src/variables';
+@import "src/variables";
 
 .WelcomeAnimation {
-    margin: 0 auto;
-    font-size: 2rem !important;
-    font-weight: 300;
+	margin: 0 auto;
+	font-size: 2rem !important;
+	font-weight: 300;
 }
 
 .WelcomeAnimation mark,
 .WelcomeAnimation i {
-    font-size: 2rem !important;
+	font-size: 2rem !important;
 }
 
 .logoText {
-    font-family: 'Pacifico', 'Roboto', sans-serif;
-    background-color: inherit;
-    color: #FE6E6E;
+	font-family: "Pacifico", "Roboto", sans-serif;
+	background-color: inherit;
+	color: $red2;
 }

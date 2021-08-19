@@ -1,87 +1,91 @@
-@import 'src/variables';
+@import "src/variables";
 
 $borderRadius: 50%;
 
-.darkStyling:not(:first-child), .lightStyling:not(:first-child) {
-    margin-top: 10px;
+.darkStyling:not(:first-child),
+.lightStyling:not(:first-child) {
+	margin-top: 10px;
 }
 
-.darkStyling, .lightStyling {
-    display: flex;
-    position: relative;
-    user-select: none;
-    align-items: center;
-    border-radius: $borderRadius;
+.darkStyling,
+.lightStyling {
+	display: flex;
+	position: relative;
+	user-select: none;
+	align-items: center;
+	border-radius: $borderRadius;
 }
 
-.darkStyling:hover .text, .lightStyling:hover .text {
-    font-weight: 400;
+.darkStyling:hover .text,
+.lightStyling:hover .text {
+	font-weight: 400;
 }
 
-.darkStyling input, .lightStyling input {
-    opacity: 0;
-    cursor: pointer;
+.darkStyling input,
+.lightStyling input {
+	opacity: 0;
+	cursor: pointer;
 }
 
-.darkStyling:hover input ~ .checkmark, .lightStyling:hover input ~ .checkmark {
-    background-color: #ccc;
+.darkStyling:hover input ~ .checkmark,
+.lightStyling:hover input ~ .checkmark {
+	background-color: $gray4;
 }
-
 
 .lightStyling input:checked ~ .checkmark {
-    background-color: #FE6E6E;
+	background-color: $red2;
 }
 
 .darkStyling input:checked ~ .checkmark {
-    background-color:#2d2d2d;
+	background-color: $black;
 }
 
-.darkStyling input:checked ~ .checkmark:after, .lightStyling input:checked ~ .checkmark:after {
-    display: block;
+.darkStyling input:checked ~ .checkmark:after,
+.lightStyling input:checked ~ .checkmark:after {
+	display: block;
 }
 
-.darkStyling .checkmark:after, .lightStyling .checkmark:after {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 7px;
-    height: 7px;
-    background-color: #fff;
-    border-radius: $borderRadius;
+.darkStyling .checkmark:after,
+.lightStyling .checkmark:after {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 7px;
+	height: 7px;
+	background-color: white;
+	border-radius: $borderRadius;
 }
 
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 17px;
-    width: 17px;
-    background-color: #eee;
-    margin-top: 0px;
-    border-radius: $borderRadius;
-    margin-right: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 17px;
+	width: 17px;
+	background-color: $gray5;
+	margin-top: 0px;
+	border-radius: $borderRadius;
+	margin-right: 20px;
 }
 
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+	content: "";
+	position: absolute;
+	display: none;
 }
 
 .text,
 .checkedText {
-    margin-left: 15px;
+	margin-left: 15px;
 }
-
 
 .radioButtonContainer {
-    display: flex;
+	display: flex;
 }
 
-
 .disableMsg {
-    margin-left: 10px;
-    color: #BF5252;
-    user-select: none;
-    font-weight: 400;
+	margin-left: 10px;
+	color: $red1;
+	user-select: none;
+	font-weight: 400;
 }

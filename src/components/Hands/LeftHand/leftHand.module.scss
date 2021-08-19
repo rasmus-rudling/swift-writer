@@ -1,10 +1,10 @@
-@import 'src/variables';
+@import "src/variables";
 
 .LeftHand {
-    position: relative;
+	position: relative;
 }
 
 .LeftHand img {
-    height: 250px;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+	height: 250px;
+	filter: drop-shadow(0 0 5px $gray3);
 }

@@ -1,29 +1,29 @@
-@import 'src/variables';
+@import "src/variables";
 
 .ShortTextInput {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .ShortTextInput input {
-    margin-top: 2px;
-    padding: 10px 12px;
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    height: 34px;
+	margin-top: 2px;
+	padding: 10px 12px;
+	width: 250px;
+	border: 1px solid $gray4;
+	border-radius: 2px;
+	height: 34px;
 }
 
 .ShortTextInput input:focus {
-    outline: none;
-    border: 1px solid #FE6E6E;
+	outline: none;
+	border: 1px solid $red2;
 }
 
 .ShortTextInput h4 {
-    font-size: 13px;
+	font-size: 13px;
 }
 
 .ShortTextInput input:disabled {
-    background-color: rgb(228, 228, 228);
-    cursor: not-allowed;
+	background-color: $gray5;
+	cursor: not-allowed;
 }

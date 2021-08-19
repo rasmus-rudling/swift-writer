@@ -1,22 +1,28 @@
-@import 'src/variables';
+@import "src/variables";
+
+.QuickContestPageContainer {
+	min-height: 100vh;
+	background-color: $gray6;
+	display: flex;
+	justify-content: center;
+	// align-items: center;
+}
 
 .QuickContestPage {
-    padding: 100px 30px 60px 30px;
-    margin: 0 auto;
-    background-color: rgb(191, 191, 191, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+	padding: 100px 30px 60px 30px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .QuickContestPage h1 {
-    font-family: 'Pacifico';
-    color: #FE6E6E;
+	font-family: "Pacifico";
+	color: $red2;
 }
 
 .durationValue {
-    font-weight: 400;
-    color: #FE6E6E;
-    background-color: inherit;
+	font-weight: 400;
+	color: $red2;
+	background-color: inherit;
 }

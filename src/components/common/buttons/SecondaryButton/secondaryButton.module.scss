@@ -1,6 +1,6 @@
-@import 'src/variables';
+@import "src/variables";
 
-.orangeButton,  
+.orangeButton,
 .redButton,
 .blueButton,
 .blackButton,
@@ -8,90 +8,89 @@
 .grayButton,
 .whiteButton,
 .purpleButton {
-    border-radius: 3px;
-    cursor: pointer;
-    height: 30px;
-    padding: 2px 15px 0;
-    text-transform: capitalize;
-    user-select: none;
-    transition: .2s;
-    border-width: 1px;
-    border-style: solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+	border-radius: 3px;
+	cursor: pointer;
+	height: $btn-height1;
+	padding: 2px 15px 0;
+	text-transform: capitalize;
+	user-select: none;
+	transition: 0.2s;
+	border-width: 1px;
+	border-style: solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
 }
 
 .orangeButton {
-    border-color: #FEC46E;
-    color: #FEC46E;
+	border-color: $orange2;
+	color: $orange2;
 }
 
 .redButton {
-    border-color: #FE6E6E;
-    color: #FE6E6E;
+	border-color: $red2;
+	color: $red2;
 }
 
 .blueButton {
-    border-color: #5289BF;
-    color: #5289BF;
+	border-color: $blue2;
+	color: $blue2;
 }
 
 .blackButton {
-    border-color: #232323;
-    color: #232323;
+	border-color: $black;
+	color: $black;
 }
 
 .greenButton {
-    border-color: #60D97D;
-    color: #60D97D ;
+	border-color: $green2;
+	color: $green2;
 }
 
 .purpleButton {
-    border-color: #CA6EFE;
-    color: #CA6EFE;
+	border-color: $purple2;
+	color: $purple2;
 }
 
 .grayButton {
-    border-color: #777777;
-    color: #777777;
+	border-color: $gray1;
+	color: $gray1;
 }
 
 .whiteButton {
-    border-color: #fff;
-    color: #fff;
+	border-color: white;
+	color: white;
 }
 
-
 .orangeButton:hover {
-    background-color: rgba(254, 196, 110, 0.3);
+	background-color: $orange6;
 }
 
 .redButton:hover {
-    background-color: rgba(254, 110, 110, 0.3);
+	background-color: $red6;
 }
 
 .blueButton:hover {
-    background-color:rgba(82, 136, 191, 0.3)
+	background-color: $blue6;
 }
 
 .blackButton:hover {
-    background-color: rgba(35, 35, 35, 0.3);
+	background-color: $gray4;
 }
 
 .greenButton:hover {
-    background-color: rgba(96, 217, 124, 0.3);
+	background-color: $green6;
 }
 
 .purpleButton:hover {
-    background-color: rgba(201, 110, 254, 0.3);
+	background-color: $purple6;
 }
 
 .grayButton:hover {
-    background-color: rgb(119, 119, 119, 0.3);
+	background-color: $gray5;
 }
 
 .whiteButton:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+	background-color: $gray5;
 }

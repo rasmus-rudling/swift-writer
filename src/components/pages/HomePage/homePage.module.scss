@@ -1,31 +1,50 @@
-@import 'src/variables';
+@import "src/variables";
 
-.FrontPage {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 100px 0 20px 0;
-    text-align: center;
-    background-color: rgb(191, 191, 191, 0.1);
+.HomePageContainer {
+	display: flex;
+	height: calc(100vh - 80px);
+	width: 100vw;
+	margin-top: 80px;
+	padding-top: 20px;
+	justify-content: center;
+	background-color: $gray6;
+}
+
+.HomePage {
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
 }
 
 .mappingText {
-    background-color: transparent;
-    margin-bottom: 6px;
-    color: #232323;
-    font-weight: 400;
+	background-color: transparent;
+	margin-bottom: 6px;
+	color: $black;
+	font-weight: 400;
 }
 
 .settings {
-    display: flex;
-    margin: 0 auto;
+	display: flex;
+	margin: 0 auto;
 }
 
 .setting {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .setting:not(:last-child) {
-    margin-right: 25px;
+	margin-right: 25px;
+}
+
+@media (min-height: 750px) {
+	.HomePageContainer {
+		width: 100vw;
+		margin-top: 80px;
+		justify-content: center;
+		align-items: center;
+		padding-top: 0;
+	}
 }

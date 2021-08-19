@@ -1,170 +1,162 @@
-@import 'src/variables';
+@import "src/variables";
 
 $borderWidth: 1px;
 
 .Key {
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    user-select: none;
-    cursor: pointer;
-    transition: .1s;
-    color: #fff;
-    position: relative;
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	user-select: none;
+	cursor: pointer;
+	transition: 0.1s;
+	color: #fff;
+	position: relative;
 }
 
 .Key:not(:first-child) {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
 .topRow,
 .bottomRow {
-    height: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+	height: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .topRow div,
 .bottomRow div {
-    width: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	width: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .centeredChar {
-
 }
 
 .redKey {
-    background-color: #FE6E6E;
-    border: $borderWidth solid #BF5252;
+	background-color: $red2;
+	border: $borderWidth solid $red1;
 }
 .redKey:hover {
-    background-color: #BF5252;
-    border: $borderWidth solid #BF5252;
+	background-color: $red1;
 }
 
 .blueKey {
-    background-color: #6EB6FE;
-    border: $borderWidth solid #5289BF;
+	background-color: $blue2;
+	border: $borderWidth solid $blue1;
 }
 .blueKey:hover {
-    background-color: #5289BF;
-    border: $borderWidth solid #5289BF;
+	background-color: $blue1;
 }
 
 .greenKey {
-    background-color: #60D97D;
-    border: $borderWidth solid #439957;
+	background-color: $green2;
+	border: $borderWidth solid $green1;
 }
 .greenKey:hover {
-    background-color: #439957;
-    border: $borderWidth solid #439957;
+	background-color: $green1;
 }
 
 .orangeKey {
-    background-color: #FEC46E;
-    border: $borderWidth solid #BF9452;
+	background-color: $orange2;
+	border: $borderWidth solid $orange1;
 }
 .orangeKey:hover {
-    background-color: #BF9452;
-    border: $borderWidth solid #BF9452;
+	background-color: $orange1;
 }
 
 .purpleKey {
-    background-color: #CA6EFE;
-    border: $borderWidth solid #9752BF;
+	background-color: $purple2;
+	border: $borderWidth solid $purple1;
 }
 
 .purpleKey:hover {
-    background-color: #9752BF;
-    border: $borderWidth solid #9752BF;
+	background-color: $purple1;
 }
 
 .grayKey {
-    background-color: #BFBFBF;
-    border: $borderWidth solid #777777;
+	background-color: $gray2;
+	border: $borderWidth solid $gray1;
 }
 .grayKey:hover {
-    background-color: #777777;
-    border: $borderWidth solid #777777;
+	background-color: $gray1;
 }
 
 .marker {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    margin-left: -8px;
-    height: 3px;
-    width: 16px;
-    border-radius: 2px;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	margin-left: -8px;
+	height: 3px;
+	width: 16px;
+	border-radius: 2px;
 }
 
 .hide {
-    display: none;
+	display: none;
 }
 
 .inActiveKey {
-    background-color: #BFBFBF;
-    border: $borderWidth solid #777777;
+	background-color: $gray2;
+	border: $borderWidth solid $gray1;
 }
 
 .orangeHover:hover {
-    background-color: #FEC46E;
-    border: $borderWidth solid #BF9452;
+	background-color: $orange2;
+	border: $borderWidth solid $orange1;
 }
 
 .redHover:hover {
-    background-color: #FE6E6E;
-    border: $borderWidth solid #BF5252;
+	background-color: $red2;
+	border: $borderWidth solid $red1;
 }
 
 .blueHover:hover {
-    background-color: #6EB6FE;
-    border: $borderWidth solid #5289BF;
+	background-color: $blue2;
+	border: $borderWidth solid $blue1;
 }
 
 .greenHover:hover {
-    background-color: #60D97D;
-    border: $borderWidth solid #439957;
+	background-color: $green2;
+	border: $borderWidth solid $green1;
 }
 
 .purpleHover:hover {
-    background-color: #CA6EFE;
-    border: $borderWidth solid #9752BF;
+	background-color: $purple2;
+	border: $borderWidth solid $purple1;
 }
 
 .inActiveHover:hover {
-    background-color: #BFBFBF;
-    border: $borderWidth solid #777777;
+	background-color: $gray2;
+	border: $borderWidth solid $gray1;
 }
 
 .orangeActive {
-    background-color: #BF9452;
-    border: $borderWidth solid #BF9452;
+	background-color: $orange1;
+	border: $borderWidth solid $orange1;
 }
 
 .redActive {
-    background-color: #BF5252;
-    border: $borderWidth solid #BF5252;
+	background-color: $red1;
+	border: $borderWidth solid $red1;
 }
 
 .blueActive {
-    background-color: #5289BF;
-    border: $borderWidth solid #5289BF;
+	background-color: $blue1;
+	border: $borderWidth solid $blue1;
 }
 
 .greenActive {
-    background-color: #439957;
-    border: $borderWidth solid #439957;
+	background-color: $green1;
+	border: $borderWidth solid $green1;
 }
 
 .purpleActive {
-    background-color: #9752BF;
-    border: $borderWidth solid #9752BF;
+	background-color: $purple1;
+	border: $borderWidth solid $purple1;
 }
-

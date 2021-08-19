@@ -1,70 +1,83 @@
-@import 'src/variables';
+@import "src/variables";
 
-.orangeButton,  
+.orangeButton,
 .redButton,
 .blueButton,
 .blackButton,
 .greenButton,
 .whiteButton,
-.purpleButton
- {
-    border-radius: 3px;
-    cursor: pointer;
-    height: 30px;
-    padding: 2px 15px 0;
-    text-transform: capitalize;
-    user-select: none;
-    transition: .2s;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-width: 1px;
-    border-style: solid;
+.purpleButton {
+	border-radius: 3px;
+	cursor: pointer;
+	height: $btn-height1;
+	padding: 2px 15px 0;
+	text-transform: capitalize;
+	user-select: none;
+	transition: 0.2s;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-width: 1px;
+	border-style: solid;
 }
 
 .orangeButton {
-    background-color: #FEC46E;
-    border-color:#BF9452;
+	border-color: $orange1;
+	background-color: $orange2;
 }
 
 .redButton {
-    background-color: #FE6E6E;
-    border-color:#BF5252;
+	border-color: $red1;
+	background-color: $red2;
 }
 
 .blueButton {
-    background-color: #6EB6FE;
-    border-color:#5289BF;
+	border-color: $blue1;
+	background-color: $blue2;
 }
 
 .blackButton {
-    background-color: #232323;
-    border-color:#000;
+	border-color: $black;
+	background-color: $gray1;
 }
 
 .greenButton {
-    background-color: #60D97D; 
-    border-color:#439957;
+	border-color: $green1;
+	background-color: $green2;
 }
 
 .purpleButton {
-    background-color: #CA6EFE;
-    border-color:#9752BF;
+	border-color: $purple1;
+	background-color: $purple2;
 }
 
 .whiteButton {
-    color: #BF5252;
-    background-color: #fff;
-    border-color:#BF5252;
+	color: $red2;
+	background-color: white;
+	border-color: $red2;
 }
 
+.orangeButton:hover {
+	background-color: $orange1;
+}
+.redButton:hover {
+	background-color: $red1;
+}
+.blueButton:hover {
+	background-color: $blue1;
+}
+.blackButton:hover {
+	background-color: $gray1;
+}
+.greenButton:hover {
+	background-color: $green1;
+}
+.purpleButton:hover {
+	background-color: $purple1;
+}
 
-.orangeButton:hover {background-color: #BF9452;}
-.redButton:hover {background-color: #BF5252;}
-.blueButton:hover {background-color: #5289BF}
-.blackButton:hover {background-color: #777777;}
-.greenButton:hover {background-color: #439957}
-.purpleButton:hover {background-color:#9752BF}
-
-.whiteButton:hover {background-color:#FE6E6E; color: #fff;}
+.whiteButton:hover {
+	background-color: $red2;
+	color: white;
+}
