@@ -3,7 +3,7 @@
 .HomePageContainer {
 	display: flex;
 	height: calc(100vh - 80px);
-	width: 100vw;
+	width: 100%;
 	margin-top: 80px;
 	padding-top: 20px;
 	justify-content: center;
@@ -11,6 +11,7 @@
 }
 
 .HomePage {
+	width: 100%;
 	height: fit-content;
 	display: flex;
 	flex-direction: column;
@@ -41,7 +42,6 @@
 
 @media (min-height: 750px) {
 	.HomePageContainer {
-		width: 100vw;
 		margin-top: 80px;
 		justify-content: center;
 		align-items: center;

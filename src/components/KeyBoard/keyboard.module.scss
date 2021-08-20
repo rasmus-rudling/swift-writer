@@ -1,5 +1,7 @@
 @import "src/variables";
 
+$keyboard-width-scaler: calc((90vw) / 934);
+
 .Keyboard {
 	background-color: white;
 	display: flex;
@@ -9,6 +11,7 @@
 	border-radius: 15px;
 	border: 2px solid $gray4;
 	flex-wrap: nowrap !important;
+	transform: scale(0.3);
 }
 
 .row {
@@ -18,4 +21,88 @@
 
 .row:not(:first-child) {
 	margin-top: 10px;
+}
+
+@media screen and (min-width: 350px) {
+	.Keyboard {
+		transform: scale(0.35);
+	}
+}
+
+@media screen and (min-width: 400px) {
+	.Keyboard {
+		transform: scale(0.4);
+	}
+}
+
+@media screen and (min-width: 450px) {
+	.Keyboard {
+		transform: scale(0.45);
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.Keyboard {
+		transform: scale(0.5);
+	}
+}
+
+@media screen and (min-width: 550px) {
+	.Keyboard {
+		transform: scale(0.55);
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.Keyboard {
+		transform: scale(0.6);
+	}
+}
+
+@media screen and (min-width: 650px) {
+	.Keyboard {
+		transform: scale(0.65);
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.Keyboard {
+		transform: scale(0.7);
+	}
+}
+
+@media screen and (min-width: 750px) {
+	.Keyboard {
+		transform: scale(0.75);
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.Keyboard {
+		transform: scale(0.8);
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.Keyboard {
+		transform: scale(0.85);
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.Keyboard {
+		transform: scale(0.9);
+	}
+}
+
+@media screen and (min-width: 950px) {
+	.Keyboard {
+		transform: scale(0.95);
+	}
+}
+
+@media screen and (min-width: 985px) {
+	.Keyboard {
+		transform: scale(1);
+	}
 }

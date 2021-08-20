@@ -1,0 +1,10 @@
+@import "src/variables";
+
+.rightSideContent {
+	display: flex;
+	justify-content: space-around;
+}
+
+.rightSideContent button:not(:last-child) {
+	margin-right: 20px;
+}

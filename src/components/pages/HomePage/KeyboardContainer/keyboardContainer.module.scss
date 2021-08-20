@@ -1,59 +1,168 @@
-@import 'src/variables';
+@import "src/variables";
 
 .KeyboardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 25px auto;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 25px auto;
+	position: relative;
+	height: max-content;
 }
 
 .leftHand {
-    order: 2;
-    margin-right: 20px;
+	order: 2;
+	position: absolute;
+	margin-right: 20px;
+	transform: scale(0.4);
+	top: 150px;
+	left: -40px;
 }
 
 .keyboard {
-    order: 1;
-    margin: 0 auto 30px;
+	order: 1;
+	margin: 0 auto 30px;
 }
 
-
 .rightHand {
-    margin-left: 20px;
-    order: 3;
+	position: absolute;
+	margin-left: 20px;
+	order: 3;
+	transform: scale(0.4);
+	top: 150px;
+	right: -40px;
 }
 
 @media (min-width: 1134px) {
-    .keyboard {
-        margin: 0 100px 30px;
-    }
+	.keyboard {
+		margin: 0 100px 30px;
+	}
 }
 
 @media (min-width: 1350px) {
-    .keyboard {
-        margin: 0 200px 30px;
-    }
+	.keyboard {
+		margin: 0 200px 30px;
+	}
 }
 
 @media (min-width: 1500px) {
-    .KeyboardContainer {
-        flex-wrap: nowrap;
-    }
+	.KeyboardContainer {
+		flex-wrap: nowrap;
+	}
 
-    .leftHand {
-        order: 1;
-        margin-right: 35px;
-    }
-    
-    .keyboard {
-        order: 2;
-        margin: 0 auto 30px;
-    }
-    
-    
-    .rightHand {
-        margin-left: 35px;
-        order: 3;
-    }
+	.leftHand {
+		order: 1;
+		margin-right: 35px;
+	}
+
+	.keyboard {
+		order: 2;
+		margin: 0 auto 30px;
+	}
+
+	.rightHand {
+		margin-left: 35px;
+		order: 3;
+	}
+}
+
+// -----------
+
+@media screen and (min-width: 350px) {
+	.leftHand {
+		top: 175px;
+		transform: scale(0.5);
+	}
+
+	.rightHand {
+		top: 175px;
+		transform: scale(0.5);
+	}
+}
+
+@media screen and (min-width: 400px) {
+	.leftHand {
+		top: 170px;
+	}
+
+	.rightHand {
+		top: 170px;
+	}
+}
+
+@media screen and (min-width: 450px) {
+	.leftHand {
+		top: 180px;
+	}
+
+	.rightHand {
+		top: 180px;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.Keyboard {
+		transform: scale(0.5);
+	}
+}
+
+@media screen and (min-width: 550px) {
+	.Keyboard {
+		transform: scale(0.55);
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.Keyboard {
+		transform: scale(0.6);
+	}
+}
+
+@media screen and (min-width: 650px) {
+	.Keyboard {
+		transform: scale(0.65);
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.Keyboard {
+		transform: scale(0.7);
+	}
+}
+
+@media screen and (min-width: 750px) {
+	.Keyboard {
+		transform: scale(0.75);
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.Keyboard {
+		transform: scale(0.8);
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.Keyboard {
+		transform: scale(0.85);
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.Keyboard {
+		transform: scale(0.9);
+	}
+}
+
+@media screen and (min-width: 950px) {
+	.Keyboard {
+		transform: scale(0.95);
+	}
+}
+
+@media screen and (min-width: 985px) {
+	.Keyboard {
+		transform: scale(1);
+	}
 }
