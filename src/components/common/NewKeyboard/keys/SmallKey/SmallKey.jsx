@@ -21,8 +21,9 @@ const SmallKey = ({ chars, extraClasses, keyboardWidth }) => {
 		<div
 			className={[smallKeyClass, ...extraClasses].join(" ")}
 			style={{
-				borderRadius: keyboardWidth / 50,
+				borderRadius: keyboardWidth / 80,
 				marginLeft: keyboardWidth / 105,
+				width: keyboardWidth / 16,
 			}}
 		>
 			{chars.map((key) => (
