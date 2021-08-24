@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./smallKey.module.scss";
 
-const SmallKey = ({ chars, extraClasses }) => {
+const SmallKey = ({ chars, extraClasses, keyboardWidth }) => {
 	let smallKeyClass;
 	const numChars = chars.length;
 
@@ -20,11 +20,10 @@ const SmallKey = ({ chars, extraClasses }) => {
 	return (
 		<div
 			className={[smallKeyClass, ...extraClasses].join(" ")}
-			style={
-				{
-					// fontSize: width / 12,
-				}
-			}
+			style={{
+				borderRadius: keyboardWidth / 50,
+				marginLeft: keyboardWidth / 105,
+			}}
 		>
 			{chars.map((key) => (
 				<div>{key}</div>

@@ -46,38 +46,82 @@ const NewKeyboard = () => {
 			style={{
 				fontSize: keyboardDim.width / 50,
 				height: keyboardDim.width / 2.5,
+				padding: keyboardDim.width / 50,
+				paddingTop: keyboardDim.width / 50 - keyboardDim.width / 105,
+				paddingLeft: keyboardDim.width / 50 - keyboardDim.width / 105,
 			}}
 		>
-			<Row>
+			<Row keyboardWidth={keyboardDim.width}>
 				<SmallKey
 					chars={["§", "½", "¶", "|"]}
 					extraClasses={[keyClasses.redKey]}
+					keyboardWidth={keyboardDim.width}
 				/>
 				<SmallKey
 					chars={["!", "1"]}
 					extraClasses={[keyClasses.blueKey]}
+					keyboardWidth={keyboardDim.width}
 				/>
 				<SmallKey
 					chars={['"', "2", "@"]}
 					extraClasses={[keyClasses.orangeKey]}
+					keyboardWidth={keyboardDim.width}
 				/>
-				<SmallKey chars={["K"]} extraClasses={[keyClasses.greenKey]} />
+				<SmallKey
+					chars={["K"]}
+					extraClasses={[keyClasses.greenKey]}
+					keyboardWidth={keyboardDim.width}
+				/>
+
+				<SmallKey
+					chars={["§", "½", "¶", "|"]}
+					extraClasses={[keyClasses.redKey]}
+					keyboardWidth={keyboardDim.width}
+				/>
+				<SmallKey
+					chars={["!", "1"]}
+					extraClasses={[keyClasses.blueKey]}
+					keyboardWidth={keyboardDim.width}
+				/>
+				<SmallKey
+					chars={['"', "2", "@"]}
+					extraClasses={[keyClasses.orangeKey]}
+					keyboardWidth={keyboardDim.width}
+				/>
+				<SmallKey
+					chars={["K"]}
+					extraClasses={[keyClasses.greenKey]}
+					keyboardWidth={keyboardDim.width}
+				/>
+
+				<SmallKey
+					chars={["K"]}
+					extraClasses={[keyClasses.greenKey]}
+					keyboardWidth={keyboardDim.width}
+				/>
 			</Row>
 
-			<Row>
+			<Row keyboardWidth={keyboardDim.width}>
 				<SmallKey
 					chars={["§", "½", "¶", "|"]}
 					extraClasses={[keyClasses.redKey]}
+					keyboardWidth={keyboardDim.width}
 				/>
 				<SmallKey
 					chars={["!", "1"]}
 					extraClasses={[keyClasses.blueKey]}
+					keyboardWidth={keyboardDim.width}
 				/>
 				<SmallKey
 					chars={['"', "2", "@"]}
 					extraClasses={[keyClasses.orangeKey]}
+					keyboardWidth={keyboardDim.width}
 				/>
-				<SmallKey chars={["K"]} extraClasses={[keyClasses.greenKey]} />
+				<SmallKey
+					chars={["K"]}
+					extraClasses={[keyClasses.greenKey]}
+					keyboardWidth={keyboardDim.width}
+				/>
 			</Row>
 		</div>
 	);

@@ -6,17 +6,9 @@
 .fourCharsContainer {
 	border-width: 1px;
 	border-style: solid;
-	border-radius: 1.5vw;
 	height: 100%;
 	flex: 1;
 	display: flex;
-}
-
-.oneCharContainer:not(:first-child),
-.twoCharsContainer:not(:first-child),
-.threeCharsContainer:not(:first-child),
-.fourCharsContainer:not(:first-child) {
-	margin-left: $key-space;
 }
 
 .oneCharContainer div,
