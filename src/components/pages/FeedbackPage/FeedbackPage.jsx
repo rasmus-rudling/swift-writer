@@ -1,62 +1,28 @@
-import React, { useState, useEffect} from 'react';
-import classes from './feedbackPage.module.scss';
+import React, { useState } from "react";
+import classes from "./feedbackPage.module.scss";
 
-import { useLanguage, useLanguageUpdate } from '../../../contexts/LanguageContext';
-
-import findStopsInText from '../../../utility/findStopsInText';
-import wordsPerMinToUpdateTime from '../../../utility/wordsPerMinToUpdateTime';
-
-import TextMarker from '../../common/TextMarker/TextMarker';
-import TestButton from '../../common/buttons/TestButton';
+import NewKeyboard from "../../common/NewKeyboard/NewKeyboard";
+import HeaderAnimation from "../../common/HeaderAnimation/HeaderAnimation";
 
 const FeedbackPage = () => {
-    const changeLang = useLanguageUpdate();
-    const currLang = useLanguage();
-    
-    const fullHeaderText = "Give Feedback";
-    const updateTime = wordsPerMinToUpdateTime(50, fullHeaderText);
-    
-    const [headerText, setHeaderText] = useState(" ");
-    const [stops, setStops] = useState(findStopsInText(fullHeaderText));
-    const [charIdx, setCharIdx] = useState(0);
-    const [animationFinished, setAnimationFinished] = useState(false);
-    const [showContent, setShowContent] = useState(false);
-    
-    useEffect(() => {
-        setTimeout(() => {
-            if (stops.includes(charIdx)) {
-                let tempStops = [...stops];
-                tempStops.shift();
-                setStops(tempStops);
-            } else if (charIdx < fullHeaderText.length) {
-                let newChar = fullHeaderText.charAt(charIdx);
+	const [showContent, setShowContent] = useState(false);
 
-                if (charIdx === 0) {
-                    setHeaderText(newChar);
-                } else {
-                    setHeaderText(headerText.concat(newChar));
-                }
-                
-                setCharIdx(charIdx + 1);
-            } else {
-                setAnimationFinished(true);
-            }
-        }, updateTime);
+	const showContentHandler = (newShowContent) => {
+		setShowContent(newShowContent);
+	};
 
-        setShowContent(true);
-    }, [charIdx, stops]);
+	return (
+		<div className={classes.FeedbackPageContainer}>
+			<div className={classes.FeedbackPage}>
+				<HeaderAnimation
+					headerText="Give Feedback"
+					showContentHandler={showContentHandler}
+				/>
 
-    return (
-        <div className={classes.FeedbackPage} onClick={() => changeLang("swe")}>
-            <h1>
-                {headerText}
-                <TextMarker hide={animationFinished} />
-            </h1>
-            {/* {currLang} */}
-            {/* <TestButton /> */}
-
-        </div>
-    )
-}
+				<NewKeyboard />
+			</div>
+		</div>
+	);
+};
 
 export default FeedbackPage;

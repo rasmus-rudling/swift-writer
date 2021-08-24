@@ -1,0 +1,126 @@
+@import "src/variables";
+
+$borderWidth: 1px;
+
+.redKey {
+	background-color: $red2;
+	border: $borderWidth solid $red1;
+}
+.redKey:hover {
+	background-color: $red1;
+}
+
+.blueKey {
+	background-color: $blue2;
+	border: $borderWidth solid $blue1;
+}
+.blueKey:hover {
+	background-color: $blue1;
+}
+
+.greenKey {
+	background-color: $green2;
+	border: $borderWidth solid $green1;
+}
+.greenKey:hover {
+	background-color: $green1;
+}
+
+.orangeKey {
+	background-color: $orange2;
+	border: $borderWidth solid $orange1;
+}
+.orangeKey:hover {
+	background-color: $orange1;
+}
+
+.purpleKey {
+	background-color: $purple2;
+	border: $borderWidth solid $purple1;
+}
+
+.purpleKey:hover {
+	background-color: $purple1;
+}
+
+.grayKey {
+	background-color: $gray2;
+	border: $borderWidth solid $gray1;
+}
+.grayKey:hover {
+	background-color: $gray1;
+}
+
+.marker {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	margin-left: -8px;
+	height: 3px;
+	width: 16px;
+	border-radius: 2px;
+}
+
+.hide {
+	display: none;
+}
+
+.inActiveKey {
+	background-color: $gray2;
+	border: $borderWidth solid $gray1;
+}
+
+.orangeHover:hover {
+	background-color: $orange2;
+	border: $borderWidth solid $orange1;
+}
+
+.redHover:hover {
+	background-color: $red2;
+	border: $borderWidth solid $red1;
+}
+
+.blueHover:hover {
+	background-color: $blue2;
+	border: $borderWidth solid $blue1;
+}
+
+.greenHover:hover {
+	background-color: $green2;
+	border: $borderWidth solid $green1;
+}
+
+.purpleHover:hover {
+	background-color: $purple2;
+	border: $borderWidth solid $purple1;
+}
+
+.inActiveHover:hover {
+	background-color: $gray2;
+	border: $borderWidth solid $gray1;
+}
+
+.orangeActive {
+	background-color: $orange1;
+	border: $borderWidth solid $orange1;
+}
+
+.redActive {
+	background-color: $red1;
+	border: $borderWidth solid $red1;
+}
+
+.blueActive {
+	background-color: $blue1;
+	border: $borderWidth solid $blue1;
+}
+
+.greenActive {
+	background-color: $green1;
+	border: $borderWidth solid $green1;
+}
+
+.purpleActive {
+	background-color: $purple1;
+	border: $borderWidth solid $purple1;
+}

@@ -15,48 +15,22 @@ import RepeatPasswordInput from "../../common/forms/ShortTextInput/ShortTextInpu
 import SubmitButton from "../../common/forms/formButtons/SubmitButton/SubmitButton";
 import OrDivider from "../../common/forms/Divider/Divider";
 import GoogleSignUpButton from "../../common/forms/formButtons/GoogleAuthButton/GoogleAuthButton";
+import HeaderAnimation from "../../common/HeaderAnimation/HeaderAnimation";
 
 const SignUpPage = () => {
-	const fullHeaderText = "Sign In";
-	const updateTime = wordsPerMinToUpdateTime(75, fullHeaderText);
-
-	const [headerText, setHeaderText] = useState(" ");
-	const [stops, setStops] = useState(findStopsInText(fullHeaderText));
-	const [charIdx, setCharIdx] = useState(0);
-	const [animationFinished, setAnimationFinished] = useState(false);
 	const [showContent, setShowContent] = useState(false);
 
-	useEffect(() => {
-		setTimeout(() => {
-			if (stops.includes(charIdx)) {
-				let tempStops = [...stops];
-				tempStops.shift();
-				setStops(tempStops);
-			} else if (charIdx < fullHeaderText.length) {
-				let newChar = fullHeaderText.charAt(charIdx);
-
-				if (charIdx === 0) {
-					setHeaderText(newChar);
-				} else {
-					setHeaderText(headerText.concat(newChar));
-				}
-
-				setCharIdx(charIdx + 1);
-			} else {
-				setAnimationFinished(true);
-			}
-		}, updateTime);
-
-		setShowContent(true);
-	}, [charIdx, stops]);
+	const showContentHandler = (newShowContent) => {
+		setShowContent(newShowContent);
+	};
 
 	return (
 		<div className={classes.SignInPageContainer}>
 			<div className={classes.SignInPage}>
-				<h1>
-					{headerText}
-					<TextMarker hide={animationFinished} />
-				</h1>
+				<HeaderAnimation
+					headerText="Quick Contest"
+					showContentHandler={showContentHandler}
+				/>
 
 				<SignInForm show={showContent}>
 					<EmailInput inputName="Email or Username" />
