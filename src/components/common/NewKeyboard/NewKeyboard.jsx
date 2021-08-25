@@ -410,9 +410,13 @@ const NewKeyboard = () => {
 	const activateKey = (char) => {};
 
 	useEffect(() => {
+		const keyboardRefObj = keyboardRef.current;
+
+		console.log("Bad:", keyboardRefObj.offsetHeight);
+
 		const keyboardDimInit = {
-			height: keyboardRef.current.offsetHeight,
-			width: keyboardRef.current.offsetWidth,
+			height: keyboardRefObj.offsetHeight,
+			width: keyboardRefObj.offsetWidth,
 		};
 
 		let newKeyboardPadding = keyboardDimInit.width / 50;
@@ -425,15 +429,7 @@ const NewKeyboard = () => {
 
 		setKeyboardPadding(newKeyboardPadding);
 		setKeyDistance(newKeyDistance);
-
 		setRowHeight(newRowHeight);
-
-		console.log("Bad:", keyboardRef.current.offsetHeight);
-
-		console.log("newKeyboardPadding:", newKeyboardPadding);
-		console.log("newKeyDistance:", newKeyDistance);
-		console.log("newRowHeight:", newRowHeight);
-
 		setKeyboardDim(keyboardDimInit);
 
 		window.addEventListener("resize", handleResize);
@@ -442,12 +438,6 @@ const NewKeyboard = () => {
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
-
-	// useEffect(handleResize, [keyboardRef]);
-
-	useEffect(() => {
-		console.log(rowHeight);
-	}, [rowHeight]);
 
 	return (
 		<div
