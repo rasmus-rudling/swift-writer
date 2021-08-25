@@ -373,6 +373,8 @@ const NewKeyboard = () => {
 
 	const [activeKeys, setActiveKeys] = useState(initActiveKeys);
 
+	const [keyDistance, setKeyDistance] = useState(0);
+	const [keyboardPadding, setKeyboardPadding] = useState(0);
 	const [keyboardDim, setKeyboardDim] = useState({
 		height: 0,
 		width: 0,
@@ -383,6 +385,9 @@ const NewKeyboard = () => {
 			height: keyboardRef.current.offsetHeight,
 			width: keyboardRef.current.offsetWidth,
 		};
+
+		setKeyDistance(newKeyboardDim.width / 105);
+		setKeyboardPadding(newKeyboardDim.width / 50);
 		setKeyboardDim(newKeyboardDim);
 	};
 
@@ -393,6 +398,9 @@ const NewKeyboard = () => {
 			height: keyboardRef.current.offsetHeight,
 			width: keyboardRef.current.offsetWidth,
 		};
+
+		setKeyboardPadding(keyboardDimInit.width / 50);
+		setKeyDistance(keyboardDimInit.width / 105);
 		setKeyboardDim(keyboardDimInit);
 
 		window.addEventListener("resize", handleResize);
@@ -408,7 +416,7 @@ const NewKeyboard = () => {
 			ref={keyboardRef}
 			style={{
 				fontSize: keyboardDim.width / 50,
-				height: keyboardDim.width / 2.85,
+				height: keyboardDim.width / 3,
 				padding: keyboardDim.width / 50,
 				paddingTop: keyboardDim.width / 50 - keyboardDim.width / 105,
 				paddingLeft: keyboardDim.width / 50 - keyboardDim.width / 105,
@@ -427,15 +435,11 @@ const NewKeyboard = () => {
 				}
 
 				return (
-					<Row keyboardWidth={keyboardDim.width}>
+					<Row keyboardDim={keyboardDim}>
 						{numKeysInRowArray.map((keyIdx) => {
 							let totIdx = numPrevKeys + keyIdx;
 							let keyKey = keysKeys[totIdx];
 							let keyObj = keyboardInfo.keys[keyKey];
-
-							console.log(totIdx);
-							console.log(keyKey);
-							console.log("");
 
 							let keyClass;
 
