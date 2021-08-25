@@ -1,15 +1,13 @@
 import React from "react";
 import classes from "./keyboardRow.module.scss";
 
-const KeyboardRow = ({ children, keyboardDim }) => {
-	let rowHeight = keyboardDim.width / 105;
-	let rowMarginTop = keyboardDim.width / 105;
-
+const KeyboardRow = ({ children, keyDistance, rowHeight }) => {
+	console.log(rowHeight);
 	return (
 		<div
 			className={classes.KeyboardRow}
 			style={{
-				marginTop: rowMarginTop,
+				marginTop: keyDistance,
 				height: rowHeight,
 			}}
 		>

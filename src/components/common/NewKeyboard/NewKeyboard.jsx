@@ -363,6 +363,8 @@ const keyboardInfo = {
 const NewKeyboard = () => {
 	const keyboardRef = useRef(null);
 
+	const numKeyRows = keyboardInfo.keysInRow.length;
+
 	const keysKeys = Object.keys(keyboardInfo.keys);
 
 	let initActiveKeys = {};
@@ -374,6 +376,7 @@ const NewKeyboard = () => {
 	const [activeKeys, setActiveKeys] = useState(initActiveKeys);
 
 	const [keyDistance, setKeyDistance] = useState(0);
+	const [rowHeight, setRowHeight] = useState(0);
 	const [keyboardPadding, setKeyboardPadding] = useState(0);
 	const [keyboardDim, setKeyboardDim] = useState({
 		height: 0,
@@ -386,8 +389,21 @@ const NewKeyboard = () => {
 			width: keyboardRef.current.offsetWidth,
 		};
 
-		setKeyDistance(newKeyboardDim.width / 105);
-		setKeyboardPadding(newKeyboardDim.width / 50);
+		let newKeyboardPadding = newKeyboardDim.width / 50;
+		let newKeyDistance = newKeyboardDim.width / 105;
+		let newRowHeight =
+			(newKeyboardDim.height -
+				(numKeyRows - 1) * newKeyDistance -
+				2 * newKeyboardPadding) /
+			numKeyRows;
+
+		console.log("Good:", newKeyboardDim.height);
+
+		setKeyDistance(newKeyDistance);
+		setKeyboardPadding(newKeyboardPadding);
+
+		setRowHeight(newRowHeight);
+
 		setKeyboardDim(newKeyboardDim);
 	};
 
@@ -399,8 +415,25 @@ const NewKeyboard = () => {
 			width: keyboardRef.current.offsetWidth,
 		};
 
-		setKeyboardPadding(keyboardDimInit.width / 50);
-		setKeyDistance(keyboardDimInit.width / 105);
+		let newKeyboardPadding = keyboardDimInit.width / 50;
+		let newKeyDistance = keyboardDimInit.width / 105;
+		let newRowHeight =
+			(keyboardDimInit.height -
+				(numKeyRows - 1) * newKeyDistance -
+				2 * newKeyboardPadding) /
+			numKeyRows;
+
+		setKeyboardPadding(newKeyboardPadding);
+		setKeyDistance(newKeyDistance);
+
+		setRowHeight(newRowHeight);
+
+		console.log("Bad:", keyboardRef.current.offsetHeight);
+
+		console.log("newKeyboardPadding:", newKeyboardPadding);
+		console.log("newKeyDistance:", newKeyDistance);
+		console.log("newRowHeight:", newRowHeight);
+
 		setKeyboardDim(keyboardDimInit);
 
 		window.addEventListener("resize", handleResize);
@@ -410,6 +443,12 @@ const NewKeyboard = () => {
 		};
 	}, []);
 
+	// useEffect(handleResize, [keyboardRef]);
+
+	useEffect(() => {
+		console.log(rowHeight);
+	}, [rowHeight]);
+
 	return (
 		<div
 			className={classes.NewKeyboard}
@@ -417,12 +456,12 @@ const NewKeyboard = () => {
 			style={{
 				fontSize: keyboardDim.width / 50,
 				height: keyboardDim.width / 3,
-				padding: keyboardDim.width / 50,
-				paddingTop: keyboardDim.width / 50 - keyboardDim.width / 105,
-				paddingLeft: keyboardDim.width / 50 - keyboardDim.width / 105,
+				padding: keyboardPadding,
+				paddingTop: keyboardPadding - keyDistance,
+				paddingLeft: keyboardPadding - keyDistance,
 			}}
 		>
-			{keyboardInfo.keysInRow.map((numKeysInRow, idx) => {
+			{/* {keyboardInfo.keysInRow.map((numKeysInRow, idx) => {
 				const numKeysInRowArray = Array.from(
 					{ length: numKeysInRow },
 					(v, k) => k
@@ -435,7 +474,7 @@ const NewKeyboard = () => {
 				}
 
 				return (
-					<Row keyboardDim={keyboardDim}>
+					<Row keyDistance={keyDistance} rowHeight={rowHeight}>
 						{numKeysInRowArray.map((keyIdx) => {
 							let totIdx = numPrevKeys + keyIdx;
 							let keyKey = keysKeys[totIdx];
@@ -472,15 +511,17 @@ const NewKeyboard = () => {
 									<SmallKey
 										chars={keyObj.chars}
 										extraClasses={[keyClass]}
-										keyboardWidth={keyboardDim.width}
+										rowHeight={rowHeight}
+										keyDistance={keyDistance}
 									/>
 								);
 							} else if (keyObj.keyType === "medium") {
 								return (
 									<MediumKey
 										chars={keyObj.chars}
+										rowHeight={rowHeight}
 										extraClasses={[keyClass]}
-										keyboardWidth={keyboardDim.width}
+										keyDistance={keyDistance}
 									/>
 								);
 							} else if (keyObj.keyType === "space") {
@@ -489,7 +530,7 @@ const NewKeyboard = () => {
 						})}
 					</Row>
 				);
-			})}
+			})} */}
 		</div>
 	);
 };
