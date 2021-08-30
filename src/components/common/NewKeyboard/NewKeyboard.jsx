@@ -9,9 +9,8 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import MediumKey from "./keys/MediumKey/MediumKey";
-import SpaceKey from "./keys/SpaceKey/SpaceKey";
 
-import { swedishKeyboard } from "../../../utility/keyboards";
+import { swedishKeyboard } from "../../../utility/keyboards/swedish";
 
 const NewKeyboard = () => {
 	const keyboardRef = useRef(null);

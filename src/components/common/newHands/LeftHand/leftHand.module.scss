@@ -1,0 +1,10 @@
+@import "src/variables";
+
+.LeftHand {
+	position: relative;
+	width: 100%;
+}
+
+.LeftHand img {
+	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+}

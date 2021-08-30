@@ -64,7 +64,7 @@ export const swedishKeyboard = {
 			keyType: "small",
 		},
 		"1!¡": {
-			chars: ["1", "!¡", "¡"],
+			chars: ["1", "!", "¡"],
 			finger: "pinkyL",
 			keyType: "small",
 		},
