@@ -8,6 +8,7 @@
 	border-style: solid;
 	height: 100%;
 	display: flex;
+	position: relative;
 }
 
 .oneCharContainer div,
@@ -17,6 +18,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.marker {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	border-radius: 2px;
 }
 
 .oneCharContainer {

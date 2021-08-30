@@ -92,7 +92,7 @@ const keyboardInfo = {
 			keyType: "small",
 		},
 		"4¤$": {
-			chars: ["4", "", ""],
+			chars: ["4", "¤", "$"],
 			finger: "indexL",
 			keyType: "small",
 		},
@@ -140,13 +140,14 @@ const keyboardInfo = {
 			chars: ["← Back"],
 			finger: "pinkyR",
 			keyType: "medium",
-			scaler: 3,
+			scaler: 1.95,
 		},
 
 		"Tab ↹": {
 			chars: ["Tab ↹"],
 			finger: "pinkyL",
 			keyType: "medium",
+			scaler: 1.3,
 		},
 		Q: {
 			chars: ["Q"],
@@ -212,6 +213,7 @@ const keyboardInfo = {
 			chars: ["CapsLock"],
 			finger: "pinkyL",
 			keyType: "medium",
+			scaler: 1.7,
 		},
 		A: {
 			chars: ["A"],
@@ -232,6 +234,7 @@ const keyboardInfo = {
 			chars: ["F"],
 			finger: "indexL",
 			keyType: "small",
+			marker: "rgb(67, 153, 87)",
 		},
 		G: {
 			chars: ["G"],
@@ -247,6 +250,7 @@ const keyboardInfo = {
 			chars: ["J"],
 			finger: "indexR",
 			keyType: "small",
+			marker: "rgb(191, 82, 82)",
 		},
 		K: {
 			chars: ["K"],
@@ -277,11 +281,13 @@ const keyboardInfo = {
 			chars: ["↲ Enter"],
 			finger: "pinkyR",
 			keyType: "medium",
+			scaler: 1.28,
 		},
 		"⇧ Shift": {
 			chars: ["⇧ Shift"],
 			finger: "pinkyL",
 			keyType: "medium",
+			scaler: 1.3,
 		},
 		"<>|": {
 			chars: ["<", ">", "|"],
@@ -341,22 +347,26 @@ const keyboardInfo = {
 		Ctrl: {
 			chars: ["Ctrl"],
 			finger: "pinkyL",
-			keyType: "small",
+			keyType: "medium",
+			scaler: 2,
 		},
 		Alt: {
 			chars: ["Alt"],
 			finger: "pinkyL",
-			keyType: "small",
+			keyType: "medium",
+			scaler: 2,
 		},
-		Space: {
-			chars: ["Space"],
+		space: {
+			chars: ["space"],
 			finger: "thumb",
-			keyType: "space",
+			keyType: "medium",
+			scaler: 7,
 		},
 		"Alt Gr": {
 			chars: ["Alt Gr"],
 			finger: "ringR",
-			keyType: "small",
+			keyType: "medium",
+			scaler: 2,
 		},
 	},
 };
@@ -384,7 +394,6 @@ const NewKeyboard = () => {
 		height: 0,
 		width: 0,
 	});
-	const [heightIsWrong, setHeightIsWrong] = useState(true);
 
 	const handleResize = () => {
 		const newKeyboardDim = {
@@ -500,7 +509,7 @@ const NewKeyboard = () => {
 								keyObj.finger === "pinkyR"
 							) {
 								keyClass = keyClasses.greenKey;
-							} else if (keyObj.finger === "space") {
+							} else if (keyObj.finger === "thumb") {
 								keyClass = keyClasses.purpleKey;
 							}
 
@@ -512,6 +521,7 @@ const NewKeyboard = () => {
 										rowHeight={rowHeight}
 										keyDistance={keyDistance}
 										keyPadding={keyPadding}
+										marker={keyObj.marker}
 									/>
 								);
 							} else if (keyObj.keyType === "medium") {
@@ -522,16 +532,9 @@ const NewKeyboard = () => {
 										extraClasses={[keyClass]}
 										keyDistance={keyDistance}
 										keyPadding={keyPadding}
+										keyWidth={rowHeight * keyObj.scaler}
 									/>
 								);
-							} else if (keyObj.keyType === "space") {
-								<SpaceKey
-									chars={keyObj.chars}
-									rowHeight={rowHeight}
-									extraClasses={[keyClass]}
-									keyDistance={keyDistance}
-									keyPadding={keyPadding}
-								/>;
 							}
 							return null;
 						})}

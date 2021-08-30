@@ -7,6 +7,8 @@ const SmallKey = ({
 	keyDistance,
 	rowHeight,
 	keyPadding,
+	marker,
+	keyWidth,
 }) => {
 	let smallKeyClass;
 	const numChars = chars.length;
@@ -21,19 +23,35 @@ const SmallKey = ({
 		smallKeyClass = classes.fourCharsContainer;
 	}
 
+	if (marker !== undefined) {
+		console.log(marker);
+	}
+
 	return (
 		<div
 			className={[smallKeyClass, ...extraClasses].join(" ")}
 			style={{
 				borderRadius: keyDistance * 1.3,
 				marginLeft: keyDistance,
-				width: rowHeight,
+				width: keyWidth === undefined ? rowHeight : keyWidth,
 				padding: keyPadding,
 			}}
 		>
 			{chars.map((key) => (
 				<div>{key}</div>
 			))}
+
+			{marker !== undefined ? (
+				<div
+					className={classes.marker}
+					style={{
+						backgroundColor: marker,
+						width: rowHeight * 0.45,
+						marginLeft: -(rowHeight * 0.42) / 2,
+						height: rowHeight * 0.075,
+					}}
+				/>
+			) : null}
 		</div>
 	);
 };
