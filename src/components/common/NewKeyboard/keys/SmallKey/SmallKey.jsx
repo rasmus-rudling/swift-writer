@@ -1,7 +1,13 @@
 import React from "react";
 import classes from "./smallKey.module.scss";
 
-const SmallKey = ({ chars, extraClasses, keyDistance, rowHeight }) => {
+const SmallKey = ({
+	chars,
+	extraClasses,
+	keyDistance,
+	rowHeight,
+	keyPadding,
+}) => {
 	let smallKeyClass;
 	const numChars = chars.length;
 
@@ -15,8 +21,6 @@ const SmallKey = ({ chars, extraClasses, keyDistance, rowHeight }) => {
 		smallKeyClass = classes.fourCharsContainer;
 	}
 
-	// console.log(extraClasses);
-
 	return (
 		<div
 			className={[smallKeyClass, ...extraClasses].join(" ")}
@@ -24,6 +28,7 @@ const SmallKey = ({ chars, extraClasses, keyDistance, rowHeight }) => {
 				borderRadius: keyDistance * 1.3,
 				marginLeft: keyDistance,
 				width: rowHeight,
+				padding: keyPadding,
 			}}
 		>
 			{chars.map((key) => (

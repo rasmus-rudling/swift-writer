@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./keyboardRow.module.scss";
 
 const KeyboardRow = ({ children, keyDistance, rowHeight }) => {
-	console.log(rowHeight);
 	return (
 		<div
 			className={classes.KeyboardRow}

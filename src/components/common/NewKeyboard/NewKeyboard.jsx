@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import MediumKey from "./keys/MediumKey/MediumKey";
+import SpaceKey from "./keys/SpaceKey/SpaceKey";
 
 const keyboardInfo = {
 	charToKeyMapping: {
@@ -378,10 +379,12 @@ const NewKeyboard = () => {
 	const [keyDistance, setKeyDistance] = useState(0);
 	const [rowHeight, setRowHeight] = useState(0);
 	const [keyboardPadding, setKeyboardPadding] = useState(0);
+	const [keyPadding, setKeyPadding] = useState(0);
 	const [keyboardDim, setKeyboardDim] = useState({
 		height: 0,
 		width: 0,
 	});
+	const [heightIsWrong, setHeightIsWrong] = useState(true);
 
 	const handleResize = () => {
 		const newKeyboardDim = {
@@ -396,27 +399,19 @@ const NewKeyboard = () => {
 				(numKeyRows - 1) * newKeyDistance -
 				2 * newKeyboardPadding) /
 			numKeyRows;
-
-		console.log("Good:", newKeyboardDim.height);
+		let newKeyPadding = newKeyboardDim.width / 280;
 
 		setKeyDistance(newKeyDistance);
 		setKeyboardPadding(newKeyboardPadding);
-
 		setRowHeight(newRowHeight);
-
 		setKeyboardDim(newKeyboardDim);
+		setKeyPadding(newKeyPadding);
 	};
 
-	const activateKey = (char) => {};
-
-	useEffect(() => {
-		const keyboardRefObj = keyboardRef.current;
-
-		console.log("Bad:", keyboardRefObj.offsetHeight);
-
+	const handleMutate = () => {
 		const keyboardDimInit = {
-			height: keyboardRefObj.offsetHeight,
-			width: keyboardRefObj.offsetWidth,
+			height: keyboardRef.current.offsetHeight,
+			width: keyboardRef.current.offsetWidth,
 		};
 
 		let newKeyboardPadding = keyboardDimInit.width / 50;
@@ -426,16 +421,29 @@ const NewKeyboard = () => {
 				(numKeyRows - 1) * newKeyDistance -
 				2 * newKeyboardPadding) /
 			numKeyRows;
+		let newKeyPadding = keyboardDimInit.width / 280;
 
 		setKeyboardPadding(newKeyboardPadding);
 		setKeyDistance(newKeyDistance);
 		setRowHeight(newRowHeight);
 		setKeyboardDim(keyboardDimInit);
+		setKeyPadding(newKeyPadding);
+	};
+
+	const activateKey = (char) => {};
+
+	useEffect(() => {
+		handleResize();
+
+		let observer = new MutationObserver(handleMutate);
+		let config = { attributes: true, childList: true, characterData: true };
+		observer.observe(keyboardRef.current, config);
 
 		window.addEventListener("resize", handleResize);
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
+			observer.disconnect();
 		};
 	}, []);
 
@@ -444,14 +452,14 @@ const NewKeyboard = () => {
 			className={classes.NewKeyboard}
 			ref={keyboardRef}
 			style={{
-				fontSize: keyboardDim.width / 50,
-				height: keyboardDim.width / 3,
+				fontSize: keyboardDim.width / 60,
+				height: keyboardDim.width / 2.8,
 				padding: keyboardPadding,
 				paddingTop: keyboardPadding - keyDistance,
 				paddingLeft: keyboardPadding - keyDistance,
 			}}
 		>
-			{/* {keyboardInfo.keysInRow.map((numKeysInRow, idx) => {
+			{keyboardInfo.keysInRow.map((numKeysInRow, idx) => {
 				const numKeysInRowArray = Array.from(
 					{ length: numKeysInRow },
 					(v, k) => k
@@ -503,6 +511,7 @@ const NewKeyboard = () => {
 										extraClasses={[keyClass]}
 										rowHeight={rowHeight}
 										keyDistance={keyDistance}
+										keyPadding={keyPadding}
 									/>
 								);
 							} else if (keyObj.keyType === "medium") {
@@ -512,15 +521,23 @@ const NewKeyboard = () => {
 										rowHeight={rowHeight}
 										extraClasses={[keyClass]}
 										keyDistance={keyDistance}
+										keyPadding={keyPadding}
 									/>
 								);
 							} else if (keyObj.keyType === "space") {
+								<SpaceKey
+									chars={keyObj.chars}
+									rowHeight={rowHeight}
+									extraClasses={[keyClass]}
+									keyDistance={keyDistance}
+									keyPadding={keyPadding}
+								/>;
 							}
 							return null;
 						})}
 					</Row>
 				);
-			})} */}
+			})}
 		</div>
 	);
 };
