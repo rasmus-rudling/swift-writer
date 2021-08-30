@@ -46,8 +46,8 @@ const SmallKey = ({
 					className={classes.marker}
 					style={{
 						backgroundColor: marker,
-						width: rowHeight * 0.45,
-						marginLeft: -(rowHeight * 0.42) / 2,
+						width: rowHeight * 0.4,
+						marginLeft: -(rowHeight * 0.4) / 2,
 						height: rowHeight * 0.075,
 					}}
 				/>

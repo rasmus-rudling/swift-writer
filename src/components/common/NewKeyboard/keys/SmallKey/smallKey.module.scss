@@ -24,7 +24,7 @@
 	position: absolute;
 	top: 80%;
 	left: 50%;
-	border-radius: 2px;
+	border-radius: 10px;
 }
 
 .oneCharContainer {
@@ -34,7 +34,7 @@
 
 .twoCharsContainer {
 	justify-content: center;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	justify-content: space-evenly;
 }
 
@@ -44,6 +44,7 @@
 
 .threeCharsContainer div:nth-child(1) {
 	flex-basis: 100%;
+	order: 3;
 }
 
 .threeCharsContainer div:nth-child(2),
