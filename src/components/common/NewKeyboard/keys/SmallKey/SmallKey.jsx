@@ -23,9 +23,9 @@ const SmallKey = ({
 		smallKeyClass = classes.fourCharsContainer;
 	}
 
-	if (marker !== undefined) {
-		console.log(marker);
-	}
+	// if (marker !== undefined) {
+	// 	console.log(marker);
+	// }
 
 	return (
 		<div

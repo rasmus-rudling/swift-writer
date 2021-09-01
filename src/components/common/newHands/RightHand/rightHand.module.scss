@@ -1,10 +1,17 @@
 @import "src/variables";
 
+.RightHandContainer {
+	width: 100%;
+	position: relative;
+}
+
 .RightHand {
 	position: relative;
-	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .RightHand img {
+	width: 90%;
 	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
 }

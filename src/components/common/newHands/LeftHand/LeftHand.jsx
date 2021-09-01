@@ -1,61 +1,105 @@
-import React from 'react';
-import classes from './leftHand.module.scss';
+import React, { useEffect, useRef, useState } from "react";
+import classes from "./leftHand.module.scss";
 
-import leftHand from '../../../../resources/images/hands/leftHand.svg';
-import FingerIndicator from '../FingerIndicator/FingerIndicator';
+import leftHand from "../../../../resources/images/hands/leftHand.svg";
+import FingerIndicator from "../FingerIndicator/FingerIndicator";
 
-const LeftHand = ({highlightedFingers, updateTime, extraClass}) => {
-    let handClasses = [classes.LeftHand];
+const LeftHand = ({ highlightedFingers, updateTime, extraClass }) => {
+	let leftHandRef = useRef();
+	const [indicatorHeight, setIndicatorHeight] = useState(0);
+	const [indicatorBorderRadius, setIndicatorBorderRadius] = useState(0);
+	const [handPaddingTop, setHandPaddingTop] = useState([0, 0, 0]);
 
-    if (extraClass !== undefined) {
-        handClasses.push(extraClass);
-    }
+	let handClasses = [classes.LeftHand];
 
-    return (
-        <div className={handClasses.join(" ")}>
-            {/* <FingerIndicator 
-                color="red" 
-                top = "50px"
-                left = "-11px"
-                show = {highlightedFingers["pinkyL"]}
-                updateTime = {updateTime}
-            />
+	if (extraClass !== undefined) {
+		handClasses.push(extraClass);
+	}
 
-            <FingerIndicator 
-                color="blue" 
-                top = "-2px"
-                left = "28px"
-                show = {highlightedFingers["ringL"]}
-                updateTime = {updateTime}
-            />
+	const handleResize = () => {
+		let handHeight = leftHandRef.current.offsetHeight;
 
-            <FingerIndicator 
-                color="orange" 
-                top = "-10px"
-                left = "72px"
-                show = {highlightedFingers["middleL"]}
-                updateTime = {updateTime}
-            />
+		setIndicatorHeight(handHeight * 0.16);
+		setIndicatorBorderRadius(handHeight * 0.025);
 
-            <FingerIndicator 
-                color="green" 
-                top = "0px"
-                left = "116px"
-                show = {highlightedFingers["indexL"]}
-                updateTime = {updateTime}
-            />
+		setHandPaddingTop(handHeight * 0.04);
+		console.log("asd");
+	};
 
-            <FingerIndicator 
-                color="purple" 
-                top = "100px"
-                left = "175px"
-                show = {highlightedFingers["thumbL"]}
-                updateTime = {updateTime}
-            /> */}
+	useEffect(() => {
+		window.addEventListener("resize", handleResize);
 
-            <img src={leftHand} />
-        </div>
-    )
-}
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
+	return (
+		<div
+			className={classes.LeftHandContainer}
+			style={{
+				paddingTop: handPaddingTop,
+			}}
+		>
+			<FingerIndicator
+				color="red"
+				top={indicatorHeight * 1.5}
+				left="0px"
+				// show = {highlightedFingers["pinkyL"]}
+				show={true}
+				updateTime={updateTime}
+				height={indicatorHeight}
+				borderRadius={indicatorBorderRadius}
+			/>
+
+			<FingerIndicator
+				color="blue"
+				top={indicatorHeight * 0.22}
+				left={indicatorHeight * 1.025}
+				// show = {highlightedFingers["ringL"]}
+				show={true}
+				updateTime={updateTime}
+				height={indicatorHeight}
+				borderRadius={indicatorBorderRadius}
+			/>
+
+			<FingerIndicator
+				color="orange"
+				top="0"
+				left={indicatorHeight * 2.1}
+				// show = {highlightedFingers["middleL"]}
+				show={true}
+				updateTime={updateTime}
+				height={indicatorHeight}
+				borderRadius={indicatorBorderRadius}
+			/>
+
+			<FingerIndicator
+				color="green"
+				top={indicatorHeight * 0.23}
+				left={indicatorHeight * 3.23}
+				// show = {highlightedFingers["indexL"]}
+				show={true}
+				updateTime={updateTime}
+				height={indicatorHeight}
+				borderRadius={indicatorBorderRadius}
+			/>
+
+			<FingerIndicator
+				color="purple"
+				top={indicatorHeight * 2.7}
+				right="0"
+				// show = {highlightedFingers["thumbL"]}
+				show={true}
+				updateTime={updateTime}
+				height={indicatorHeight}
+				borderRadius={indicatorBorderRadius}
+			/>
+			<div className={handClasses.join(" ")} ref={leftHandRef}>
+				<img src={leftHand} onLoad={handleResize} alt="A left hand" />
+			</div>
+		</div>
+	);
+};
 
 export default LeftHand;

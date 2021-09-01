@@ -20,14 +20,22 @@ const FeedbackPage = () => {
 					headerText="Give Feedback"
 					showContentHandler={showContentHandler}
 				/>
-
+				{/* <div
+					style={{
+						width: "200px",
+					}}
+				>
+					<LeftHand />
+				</div> */}
 				<NewKeyboard />
-
-                <div style={{
-                    width: "100px"
-                }}>
-                    <LeftHand />
-                </div>
+				<div
+					style={{
+						width: "20%",
+					}}
+				>
+					<LeftHand />
+					<RightHand />
+				</div>
 			</div>
 		</div>
 	);
