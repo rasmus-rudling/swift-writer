@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import classes from "./feedbackPage.module.scss";
+import React, { useState } from 'react';
+import classes from './feedbackPage.module.scss';
 
-import NewKeyboard from "../../common/NewKeyboard/NewKeyboard";
-import HeaderAnimation from "../../common/HeaderAnimation/HeaderAnimation";
-import LeftHand from "../../common/newHands/LeftHand/LeftHand";
-import RightHand from "../../common/newHands/RightHand/RightHand";
+import NewKeyboard from '../../common/NewKeyboard/NewKeyboard';
+import HeaderAnimation from '../../common/HeaderAnimation/HeaderAnimation';
+import LeftHand from '../../common/newHands/LeftHand/LeftHand';
+import RightHand from '../../common/newHands/RightHand/RightHand';
 
 const FeedbackPage = () => {
 	const [showContent, setShowContent] = useState(false);
@@ -30,11 +30,11 @@ const FeedbackPage = () => {
 				<NewKeyboard />
 				<div
 					style={{
-						width: "20%",
+						width: '20%',
 					}}
 				>
-					<LeftHand />
-					<RightHand />
+					{/* <LeftHand />
+					<RightHand /> */}
 				</div>
 			</div>
 		</div>
